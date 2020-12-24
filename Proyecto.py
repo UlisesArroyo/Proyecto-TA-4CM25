@@ -46,19 +46,19 @@ def abrir_carpeta():
 		rutas.append(archivo_abierto+"/"+lista1[n])
 
 	
-	img = Image.open(rutas[5]) 
+	img = Image.open(rutas[i-1]) 
 	img = img.resize((320, 240), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen1.configure(image=img)
 	Imagen1.image = img
 
-	img = Image.open(rutas[6])  
+	img = Image.open(rutas[i])  
 	img = img.resize((320, 240), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen2.configure(image=img)
 	Imagen2.image = img	
 
-	img = Image.open(rutas[8])  
+	img = Image.open(rutas[i+1])  
 	img = img.resize((320, 240), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen3.configure(image=img)
@@ -74,53 +74,70 @@ def abrir_carpeta():
 
 def Next():
 	global x,i,rutas
-	if x > 0 and i < len(rutas)-3 :
+	if x > 0 and i < len(rutas) :
 		i = i+1
+		i = i%len(rutas)
+		
 
-		img = Image.open(rutas[i]) 
+
+		img = Image.open(rutas[i-1]) 
 		img = img.resize((320, 240), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[i+1])  
+		img = Image.open(rutas[i])  
 		img = img.resize((320, 240), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		img = Image.open(rutas[i+2])  
-		img = img.resize((320, 240), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
-		Imagen3.configure(image=img)
-		Imagen3.image = img	
+		if(i == len(rutas)-1):
+			img = Image.open(rutas[0])  
+			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = ImageTk.PhotoImage(image=img)
+			Imagen3.configure(image=img)
+			Imagen3.image = img	
+		else:
+			img = Image.open(rutas[i+1])  
+			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = ImageTk.PhotoImage(image=img)
+			Imagen3.configure(image=img)
+			Imagen3.image = img		
 
 	
 
 
 def Last():
 	global x,i,rutas
-	if x > 0 and i > 0:
+	if x > 0 and i >= 0:
 		i = i-1
-
-		img = Image.open(rutas[i]) 
+		if(i<0):
+			i=i+len(rutas)
+		img = Image.open(rutas[i-1]) 
 		img = img.resize((320, 240), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[i+1])  
+		img = Image.open(rutas[i])  
 		img = img.resize((320, 240), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		img = Image.open(rutas[i+2])  
-		img = img.resize((320, 240), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
-		Imagen3.configure(image=img)
-		Imagen3.image = img	
-
+		if(i==len(rutas)-1):
+			img = Image.open(rutas[0])  
+			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = ImageTk.PhotoImage(image=img)
+			Imagen3.configure(image=img)
+			Imagen3.image = img		
+		else:
+			img = Image.open(rutas[i+1])  
+			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = ImageTk.PhotoImage(image=img)
+			Imagen3.configure(image=img)
+			Imagen3.image = img	
 
 
 def Seleccionar():
