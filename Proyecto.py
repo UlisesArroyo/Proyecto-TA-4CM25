@@ -5,6 +5,10 @@ from tkinter import messagebox
 import os, sys, subprocess
 from PIL import Image, ImageTk
 
+i=0
+x=0
+rutas =[]
+
 
 raiz = Tk()  #ventana
 
@@ -18,17 +22,13 @@ miframe.pack(fill="both",expand ="True")
 miframe.config(bg = "black")
 miframe.config(width = "1280",height = "720")
 
-"""
-img3 = Image.open("C:/Users/HP/Desktop/Pruebas/img/1CV12_12_R_#89_003809.jpg") 
-img3 = img3.resize((320, 240), Image.ANTIALIAS)
-img3 = ImageTk.PhotoImage(image=img3)
-Imagen3 = Label(miframe, image=img3)
-Imagen3.pack(side="bottom", fill="both", expand="yes")
-Imagen3.place(x=740,y=200)
-"""
+
+
 
 
 def abrir_carpeta():
+	global rutas,x
+
 	
 	abrir_e=1
 	print(str(abrir_e))
@@ -46,13 +46,88 @@ def abrir_carpeta():
 		rutas.append(archivo_abierto+"/"+lista1[n])
 
 	
+	img = Image.open(rutas[5]) 
+	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = ImageTk.PhotoImage(image=img)
+	Imagen1.configure(image=img)
+	Imagen1.image = img
 
-	print("Las rutas de las imagenes " ,rutas)
+	img = Image.open(rutas[6])  
+	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = ImageTk.PhotoImage(image=img)
+	Imagen2.configure(image=img)
+	Imagen2.image = img	
 
-	openimg(rutas)
+	img = Image.open(rutas[8])  
+	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = ImageTk.PhotoImage(image=img)
+	Imagen3.configure(image=img)
+	Imagen3.image = img
+	
+	x=1	#Activa el next y last
 
 	
+
+	#print("Las rutas de las imagenes " ,rutas)
+
 	
+
+def Next():
+	global x,i,rutas
+	if x > 0 and i < len(rutas)-3 :
+		i = i+1
+
+		img = Image.open(rutas[i]) 
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen1.configure(image=img)
+		Imagen1.image = img
+
+		img = Image.open(rutas[i+1])  
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen2.configure(image=img)
+		Imagen2.image = img	
+
+		img = Image.open(rutas[i+2])  
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen3.configure(image=img)
+		Imagen3.image = img	
+
+	
+
+
+def Last():
+	global x,i,rutas
+	if x > 0 and i > 0:
+		i = i-1
+
+		img = Image.open(rutas[i]) 
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen1.configure(image=img)
+		Imagen1.image = img
+
+		img = Image.open(rutas[i+1])  
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen2.configure(image=img)
+		Imagen2.image = img	
+
+		img = Image.open(rutas[i+2])  
+		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen3.configure(image=img)
+		Imagen3.image = img	
+
+
+
+def Seleccionar():
+	print("ala chaval")
+
+Next()
+Last()
 	
 	
 
@@ -95,12 +170,45 @@ Imagen3.place(x=740,y=200)
 
 
 
-
+boton4 = Button(raiz, text ="            Anterior           ", font=(18),fg="blue", command = Last).place(x=250,y=600)	
+Label(miframe, button=boton4,height=50, width = 150)
 boton5 = Button(raiz, text ="        Abrir (Imagenes)   ", font=(18),fg="black", command=abrir_carpeta).place(x=515,y=600)	
 Label(miframe, button=boton5,height=50, width = 150)
+boton6 = Button(raiz, text ="            Siguiente            ", font=(18),fg="blue", command = Next).place(x=800,y=600)	
+Label(miframe, button=boton6,height=50, width = 150)
+
+boton7 = Button(raiz, text ="    Seleccionar    ", font=(18),fg="GREEN", command = Seleccionar).place(x=540,y=650)
+Label(miframe, button=boton6,height=50, width = 150)
 
 
 
+
+
+
+def boton_p(event):
+	
+	bp= event.keysym
+	if bp =="Right":
+		Next()
+	elif bp == "Left":
+		Last()
+	elif bp == "Q" or bp == "q":
+		Seleccionar()
+	'''
+	elif bp == "W" or bp == "w":
+		chos()
+	elif bp == "E" or bp == "e":
+		manos()
+	elif bp == "R" or bp == "r":
+		MANO()				
+	elif bp == "B" or bp == "b":	
+		BORRAR()
+	'''	
+
+
+
+
+raiz.bind("<Key>", boton_p)
 	
 		
 
