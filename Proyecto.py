@@ -8,7 +8,13 @@ from PIL import Image, ImageTk
 i=0
 x=0
 rutas =[]
+listaGenerada = []
 
+anchoImagenSeleccion = 320;
+altoImagenSeleccion = 240;
+
+anchoImagenAdyacente = 120;
+altoImagenAdyacente = 90;
 
 raiz = Tk()  #ventana
 
@@ -47,26 +53,24 @@ def abrir_carpeta():
 
 	
 	img = Image.open(rutas[i-1]) 
-	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen1.configure(image=img)
 	Imagen1.image = img
 
 	img = Image.open(rutas[i])  
-	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen2.configure(image=img)
 	Imagen2.image = img	
 
 	img = Image.open(rutas[i+1])  
-	img = img.resize((320, 240), Image.ANTIALIAS) 
+	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen3.configure(image=img)
 	Imagen3.image = img
 	
 	x=1	#Activa el next y last
-
-	
 
 	#print("Las rutas de las imagenes " ,rutas)
 
@@ -81,26 +85,26 @@ def Next():
 
 
 		img = Image.open(rutas[i-1]) 
-		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
 		img = Image.open(rutas[i])  
-		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
 		if(i == len(rutas)-1):
 			img = Image.open(rutas[0])  
-			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 		else:
 			img = Image.open(rutas[i+1])  
-			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img		
@@ -115,26 +119,26 @@ def Last():
 		if(i<0):
 			i=i+len(rutas)
 		img = Image.open(rutas[i-1]) 
-		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
 		img = Image.open(rutas[i])  
-		img = img.resize((320, 240), Image.ANTIALIAS) 
+		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
 		if(i==len(rutas)-1):
 			img = Image.open(rutas[0])  
-			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img		
 		else:
 			img = Image.open(rutas[i+1])  
-			img = img.resize((320, 240), Image.ANTIALIAS) 
+			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
@@ -154,19 +158,19 @@ Last()
 
 	
 imagen = Image.open(ruta_1)
-imagen = imagen.resize((320, 240), Image.ANTIALIAS)   #con esta madre hacemos mas chicas las imagenes de los costados para que se vea mamalon
+imagen = imagen.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS)   #con esta madre hacemos mas chicas las imagenes de los costados para que se vea mamalon
 imagen = ImageTk.PhotoImage(image=imagen) 
 img2 = Image.open(ruta_2) 
-img2 = img2.resize((320, 240), Image.ANTIALIAS)
+img2 = img2.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS)
 img2 = ImageTk.PhotoImage(image=img2) 
 img3 = Image.open(ruta_3) 
-img3 = img3.resize((320, 240), Image.ANTIALIAS)
+img3 = img3.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS)
 img3 = ImageTk.PhotoImage(image=img3)
 	
 
 Imagen1 = Label(miframe, image=imagen)
 Imagen1.pack(side="bottom", fill="both", expand="yes")
-Imagen1.place(x=100,y=200)
+Imagen1.place(x=390-(anchoImagenSeleccion/2),y=200+(altoImagenSeleccion/4))
     
 
 #Esta madre debe aparecer mas grande ya que sera la central
@@ -176,7 +180,7 @@ Imagen2.place(x=420,y=200)
 
 Imagen3 = Label(miframe, image=img3)
 Imagen3.pack(side="bottom", fill="both", expand="yes")
-Imagen3.place(x=740,y=200)
+Imagen3.place(x=740+(anchoImagenSeleccion/4),y=200+(altoImagenSeleccion/4))
 
 
 
@@ -196,6 +200,7 @@ Label(miframe, button=boton6,height=50, width = 150)
 
 boton7 = Button(raiz, text ="    Seleccionar    ", font=(18),fg="GREEN", command = Seleccionar).place(x=540,y=650)
 Label(miframe, button=boton6,height=50, width = 150)
+
 
 
 
