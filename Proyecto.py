@@ -114,7 +114,7 @@ def Next():
 
 def Last():
 	global x,i,rutas
-	if x > 0 and i >= 0:
+	if (x > 0 and i >= 0):
 		i = i-1
 		if(i<0):
 			i=i+len(rutas)
@@ -145,10 +145,74 @@ def Last():
 
 
 def Seleccionar():
-	print("ala chaval")
+	global x
+	if(x > 0):
+		if(comparador(listaGenerada,rutas[i]) == True):
+			print("listaGenerada (old): " , listaGenerada)
+			listaGenerada.append(rutas[i])
+			ordenar_quicksort(listaGenerada,0,len(listaGenerada)-1)
+			print("Elemento agregado: " + rutas[i])
+			print("listaGenerada (new): " , listaGenerada)
+		else: 
+			messagebox.showinfo(message="La imagen ya se encuentra en esta Lista", title="Error")
+	
 
-Next()
-Last()
+def comparador(lista,elemento):
+	for m in range(len(lista)):
+		if(elemento == lista[m]):
+			return False
+	return True 
+
+
+def generarCarpeta():
+	if(len(listaGenerada) > 0):
+		print("ala chaval")
+		ventana2 = tk.Toplevel()
+		ventana2.geometry("380x300+200+100")
+		ventana2.configure(background = "dark turquoise")
+		mensaje1 =Label(ventana2,text="Ingrese nombre de la carpeta").place(x=50,y=30)
+		captura1 =Entry(ventana2).place(x=80,y=60)
+		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = ventana2.destroy).place(x=50,y=60)	
+		Label(ventana2, button=boton4,height=50, width = 150)
+		print("captura1: " ,captura1)
+		print("Captura1: ", captura1.get())
+
+def cerrarVentana(ventana):
+	ventana.destroy()
+
+
+
+def ordenar_quicksort(lista,izq,der):
+	
+	pivote = lista[izq]		
+	i = izq					
+	j = der					
+	aux = 0					
+
+	while i < j:								
+
+		while lista[i] <= pivote and i < j:	
+			i += 1								
+
+		while lista[j] > pivote:			
+			j -= 1								
+
+		if i < j:								
+			aux = lista[i]					
+			lista[i] = lista[j]				
+			lista[j] = aux					
+
+	lista[izq] = lista[j]					
+	lista[j] = pivote							
+
+	if izq < j-1:								
+		ordenar_quicksort(lista,izq,j-1)				
+
+	if j+1 < der:								 
+		ordenar_quicksort(lista,j+1,der)
+
+
+
 	
 	
 
@@ -189,8 +253,6 @@ Imagen3.place(x=740+(anchoImagenSeleccion/4),y=200+(altoImagenSeleccion/4))
     
 
 
-
-
 boton4 = Button(raiz, text ="            Anterior           ", font=(18),fg="blue", command = Last).place(x=250,y=600)	
 Label(miframe, button=boton4,height=50, width = 150)
 boton5 = Button(raiz, text ="        Abrir (Imagenes)   ", font=(18),fg="black", command=abrir_carpeta).place(x=515,y=600)	
@@ -201,6 +263,8 @@ Label(miframe, button=boton6,height=50, width = 150)
 boton7 = Button(raiz, text ="    Seleccionar    ", font=(18),fg="GREEN", command = Seleccionar).place(x=540,y=650)
 Label(miframe, button=boton6,height=50, width = 150)
 
+boton8 = Button(raiz, text ="     Crear Carpeta     ", font=(18),fg="orange", command = generarCarpeta).place(x=1050,y=650)
+Label(miframe, button=boton6,height=50, width = 150)
 
 
 
