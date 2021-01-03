@@ -5,18 +5,52 @@ from tkinter import messagebox
 import os, sys, subprocess
 from PIL import Image, ImageTk
 
-i=0
+
+#
+
+posicionImagen=0
 x=0
 rutas =[]
 listaGenerada = []
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
+"""
+class Empleado:
+
+    def __init__(self):
+        self.nombre=input("Ingrese el nombre del empleado:")
+        self.sueldo=float(input("Ingrese el sueldo:"))
+
+    def imprimir(self):
+        print("Nombre:",self.nombre)
+        print("Sueldo:",self.sueldo)
+
+    def paga_impuestos(self):
+        if self.sueldo>3000:
+            print("Debe pagar impuestos")
+        else:
+            print("No paga impuestos")
+
+# bloque principal
+
+empleado1=Empleado()
+empleado1.imprimir()
+empleado1.paga_impuestos()
+"""
 
 anchoImagenAdyacente = 120;
 altoImagenAdyacente = 90;
 
+class UDI(object):
+	"""docstring for UDI"""
+	def __init__(self, arg):
+		super(UDI, self).__init__()
+		self.arg = arg
+		
 raiz = Tk()  #ventana
+
+nombreCarpeta = tk.StringVar()
 
 raiz.title("Ventana de pruebas")
 raiz.config(bg = "orange")
@@ -38,7 +72,7 @@ def abrir_carpeta():
 	
 	abrir_e=1
 	print(str(abrir_e))
-	archivo_abierto = filedialog.askdirectory(initialdir="/", title="Select file")               
+	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               
 	#print ("archivo abierto: " + archivo_abierto)
 	print(archivo_abierto)	
 	lista1 = os.listdir(archivo_abierto)	
@@ -52,19 +86,19 @@ def abrir_carpeta():
 		rutas.append(archivo_abierto+"/"+lista1[n])
 
 	
-	img = Image.open(rutas[i-1]) 
+	img = Image.open(rutas[posicionImagen-1]) 
 	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen1.configure(image=img)
 	Imagen1.image = img
 
-	img = Image.open(rutas[i])  
+	img = Image.open(rutas[posicionImagen])  
 	img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen2.configure(image=img)
 	Imagen2.image = img	
 
-	img = Image.open(rutas[i+1])  
+	img = Image.open(rutas[posicionImagen+1])  
 	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 	img = ImageTk.PhotoImage(image=img)
 	Imagen3.configure(image=img)
@@ -77,33 +111,33 @@ def abrir_carpeta():
 	
 
 def Next():
-	global x,i,rutas
-	if x > 0 and i < len(rutas) :
-		i = i+1
-		i = i%len(rutas)
+	global x,posicionImagen,rutas
+	if x > 0 and posicionImagen < len(rutas) :
+		posicionImagen += 1
+		posicionImagen %= len(rutas)
 		
 
 
-		img = Image.open(rutas[i-1]) 
+		img = Image.open(rutas[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[i])  
+		img = Image.open(rutas[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		if(i == len(rutas)-1):
+		if(posicionImagen == len(rutas)-1):
 			img = Image.open(rutas[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 		else:
-			img = Image.open(rutas[i+1])  
+			img = Image.open(rutas[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
@@ -113,31 +147,31 @@ def Next():
 
 
 def Last():
-	global x,i,rutas
-	if (x > 0 and i >= 0):
-		i = i-1
-		if(i<0):
-			i=i+len(rutas)
-		img = Image.open(rutas[i-1]) 
+	global x,posicionImagen,rutas
+	if (x > 0 and posicionImagen >= 0):
+		posicionImagen -= 1
+		if(posicionImagen<0):
+			posicionImagen += len(rutas)
+		img = Image.open(rutas[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[i])  
+		img = Image.open(rutas[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		if(i==len(rutas)-1):
+		if(posicionImagen==len(rutas)-1):
 			img = Image.open(rutas[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img		
 		else:
-			img = Image.open(rutas[i+1])  
+			img = Image.open(rutas[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
@@ -147,11 +181,11 @@ def Last():
 def Seleccionar():
 	global x
 	if(x > 0):
-		if(comparador(listaGenerada,rutas[i]) == True):
+		if(comparador(listaGenerada,rutas[posicionImagen]) == True):
 			print("listaGenerada (old): " , listaGenerada)
-			listaGenerada.append(rutas[i])
+			listaGenerada.append(rutas[posicionImagen])
 			ordenar_quicksort(listaGenerada,0,len(listaGenerada)-1)
-			print("Elemento agregado: " + rutas[i])
+			print("Elemento agregado: " + rutas[posicionImagen])
 			print("listaGenerada (new): " , listaGenerada)
 		else: 
 			messagebox.showinfo(message="La imagen ya se encuentra en esta Lista", title="Error")
@@ -165,20 +199,22 @@ def comparador(lista,elemento):
 
 
 def generarCarpeta():
+	global nombreCarpeta
 	if(len(listaGenerada) > 0):
 		print("ala chaval")
 		ventana2 = tk.Toplevel()
 		ventana2.geometry("380x300+200+100")
 		ventana2.configure(background = "dark turquoise")
 		mensaje1 =Label(ventana2,text="Ingrese nombre de la carpeta").place(x=50,y=30)
-		captura1 =Entry(ventana2).place(x=80,y=60)
-		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = ventana2.destroy).place(x=50,y=60)	
+		nomCarp =Entry(ventana2, textvariable=nombreCarpeta).place(x=100, y=60)
+		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = lambda: desVen(ventana2)).place(x=50,y=60)		
 		Label(ventana2, button=boton4,height=50, width = 150)
-		print("captura1: " ,captura1)
-		print("Captura1: ", captura1.get())
+		
 
-def cerrarVentana(ventana):
-	ventana.destroy()
+def desVen(ventana2):	
+	ventana2.destroy()
+	print("nombreCarpeta: " +    nombreCarpeta.get())
+	
 
 
 
