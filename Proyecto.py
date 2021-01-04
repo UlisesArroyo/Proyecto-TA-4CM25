@@ -5,6 +5,7 @@ from tkinter import messagebox
 import os, sys, subprocess
 from PIL import Image, ImageTk
 import shutil
+import random
 
 #
 
@@ -34,6 +35,17 @@ miframe = Frame(raiz)
 miframe.pack(fill="both",expand ="True")
 miframe.config(bg = "black")
 miframe.config(width = "1280",height = "720")
+
+imgBotonIzquierda= PhotoImage(file = "back/izq.png")
+imgBotonDerecha= PhotoImage(file = "back/der.png")
+imgBotonAbrir= PhotoImage(file = "back/abr.png")
+imgBotonSeleccion= PhotoImage(file = "back/sel.png")
+imgBotonCarpeta= PhotoImage(file = "back/car.png")
+
+imgRandom = str(random.randint(1,5))
+imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
+
+lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
 
 
 
@@ -265,17 +277,17 @@ Imagen3.place(x=740+(anchoImagenSeleccion/4),y=200+(altoImagenSeleccion/4))
     
 
 
-boton4 = Button(raiz, text ="            Anterior           ", font=(18),fg="blue", command = Last).place(x=250,y=600)	
+boton4 = Button(raiz, image=imgBotonIzquierda, command = Last).place(x=250,y=500)	
 Label(miframe, button=boton4,height=50, width = 150)
-boton5 = Button(raiz, text ="        Abrir (Imagenes)   ", font=(18),fg="black", command=abrir_carpeta).place(x=515,y=600)	
+boton5 = Button(raiz, image=imgBotonAbrir, command=abrir_carpeta).place(x=515,y=500)	
 Label(miframe, button=boton5,height=50, width = 150)
-boton6 = Button(raiz, text ="            Siguiente            ", font=(18),fg="blue", command = Next).place(x=800,y=600)	
+boton6 = Button(raiz, image=imgBotonDerecha, command = Next).place(x=800,y=500)	
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7 = Button(raiz, text ="    Seleccionar    ", font=(18),fg="GREEN", command = Seleccionar).place(x=540,y=650)
+boton7 = Button(raiz, image=imgBotonSeleccion, command = Seleccionar).place(x=540,y=630)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, text ="     Crear Carpeta     ", font=(18),fg="orange", command = generarCarpeta).place(x=1050,y=650)
+boton8 = Button(raiz, image=imgBotonCarpeta, command = generarCarpeta).place(x=1050,y=630)
 Label(miframe, button=boton6,height=50, width = 150)
 
 
