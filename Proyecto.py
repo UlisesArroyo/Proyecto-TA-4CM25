@@ -4,50 +4,23 @@ from tkinter import filedialog
 from tkinter import messagebox
 import os, sys, subprocess
 from PIL import Image, ImageTk
-
+import shutil
 
 #
 
 posicionImagen=0
-x=0
+carpetaAbierta=False
 rutas =[]
 listaGenerada = []
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
-"""
-class Empleado:
 
-    def __init__(self):
-        self.nombre=input("Ingrese el nombre del empleado:")
-        self.sueldo=float(input("Ingrese el sueldo:"))
-
-    def imprimir(self):
-        print("Nombre:",self.nombre)
-        print("Sueldo:",self.sueldo)
-
-    def paga_impuestos(self):
-        if self.sueldo>3000:
-            print("Debe pagar impuestos")
-        else:
-            print("No paga impuestos")
-
-# bloque principal
-
-empleado1=Empleado()
-empleado1.imprimir()
-empleado1.paga_impuestos()
-"""
 
 anchoImagenAdyacente = 120;
 altoImagenAdyacente = 90;
 
-class UDI(object):
-	"""docstring for UDI"""
-	def __init__(self, arg):
-		super(UDI, self).__init__()
-		self.arg = arg
-		
+
 raiz = Tk()  #ventana
 
 nombreCarpeta = tk.StringVar()
@@ -67,52 +40,47 @@ miframe.config(width = "1280",height = "720")
 
 
 def abrir_carpeta():
-	global rutas,x
-
-	
+	global rutas,carpetaAbierta
 	abrir_e=1
 	print(str(abrir_e))
-	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               
-	#print ("archivo abierto: " + archivo_abierto)
-	print(archivo_abierto)	
-	lista1 = os.listdir(archivo_abierto)	
-	print(lista1)
-	print(len(lista1))
-	
+	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               	
+	if(len(archivo_abierto) != 0):
+		print(archivo_abierto)
+		lista1 = os.listdir(archivo_abierto)	
+		print(lista1)
+		print(len(lista1))
+		rutas=[]
 
-	rutas=[]
+		for n in range(len(lista1)):
+			rutas.append(archivo_abierto+"/"+lista1[n])
 
-	for n in range(len(lista1)):
-		rutas.append(archivo_abierto+"/"+lista1[n])
+		
+		img = Image.open(rutas[posicionImagen-1]) 
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen1.configure(image=img)
+		Imagen1.image = img
 
-	
-	img = Image.open(rutas[posicionImagen-1]) 
-	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
-	img = ImageTk.PhotoImage(image=img)
-	Imagen1.configure(image=img)
-	Imagen1.image = img
+		img = Image.open(rutas[posicionImagen])  
+		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen2.configure(image=img)
+		Imagen2.image = img	
 
-	img = Image.open(rutas[posicionImagen])  
-	img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
-	img = ImageTk.PhotoImage(image=img)
-	Imagen2.configure(image=img)
-	Imagen2.image = img	
+		img = Image.open(rutas[posicionImagen+1])  
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen3.configure(image=img)
+		Imagen3.image = img
+		
+		carpetaAbierta = True	#Activa el next y last
 
-	img = Image.open(rutas[posicionImagen+1])  
-	img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
-	img = ImageTk.PhotoImage(image=img)
-	Imagen3.configure(image=img)
-	Imagen3.image = img
-	
-	x=1	#Activa el next y last
-
-	#print("Las rutas de las imagenes " ,rutas)
 
 	
 
 def Next():
-	global x,posicionImagen,rutas
-	if x > 0 and posicionImagen < len(rutas) :
+	global posicionImagen
+	if carpetaAbierta and posicionImagen < len(rutas) :
 		posicionImagen += 1
 		posicionImagen %= len(rutas)
 		
@@ -147,8 +115,8 @@ def Next():
 
 
 def Last():
-	global x,posicionImagen,rutas
-	if (x > 0 and posicionImagen >= 0):
+	global posicionImagen
+	if (carpetaAbierta and posicionImagen >= 0):
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutas)
@@ -179,8 +147,7 @@ def Last():
 
 
 def Seleccionar():
-	global x
-	if(x > 0):
+	if(carpetaAbierta):
 		if(comparador(listaGenerada,rutas[posicionImagen]) == True):
 			print("listaGenerada (old): " , listaGenerada)
 			listaGenerada.append(rutas[posicionImagen])
@@ -211,9 +178,18 @@ def generarCarpeta():
 		Label(ventana2, button=boton4,height=50, width = 150)
 		
 
-def desVen(ventana2):	
+def desVen(ventana2):
+	global listaGenerada	
 	ventana2.destroy()
 	print("nombreCarpeta: " +    nombreCarpeta.get())
+	os.mkdir(nombreCarpeta.get())
+	for imagen in listaGenerada:
+		direccion,nombre = os.path.split(imagen)
+		shutil.copy(imagen, nombreCarpeta.get() + "/"+nombre)
+	listaGenerada = []	
+
+
+
 	
 
 
