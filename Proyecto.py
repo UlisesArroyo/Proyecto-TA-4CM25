@@ -28,9 +28,9 @@ nombreCarpeta = tk.StringVar()
 
 raiz.title("Ventana de pruebas")
 raiz.config(bg = "orange")
-ruta_1= "img/mi_amor_1.jpg"
-ruta_2= "img/mi_amor_2.jpg"
-ruta_3= "img/mi_amor_3.jpg"
+ruta_1= "img/1.png"
+ruta_2= "img/1.png"
+ruta_3= "img/1.png"
 miframe = Frame(raiz)
 miframe.pack(fill="both",expand ="True")
 miframe.config(bg = "black")
