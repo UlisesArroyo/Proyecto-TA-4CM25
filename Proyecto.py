@@ -168,7 +168,13 @@ def Seleccionar():
 			print("listaGenerada (new): " , listaGenerada)
 		else: 
 			messagebox.showinfo(message="La imagen ya se encuentra en esta Lista", title="Error")
-	
+"""	
+def seleccionClinico():
+	if(carpetaAbierta):
+"""
+
+
+
 
 def comparador(lista,elemento):
 	for m in range(len(lista)):
@@ -277,17 +283,32 @@ Imagen3.place(x=740+(anchoImagenSeleccion/4),y=200+(altoImagenSeleccion/4))
     
 
 
-boton4 = Button(raiz, image=imgBotonIzquierda, command = Last).place(x=250,y=500)	
+boton4 = Button(raiz, image=imgBotonIzquierda, command = Last).place(x=250,y=50)	
 Label(miframe, button=boton4,height=50, width = 150)
-boton5 = Button(raiz, image=imgBotonAbrir, command=abrir_carpeta).place(x=515,y=500)	
+boton5 = Button(raiz, image=imgBotonAbrir, command=abrir_carpeta).place(x=515,y=50)	
 Label(miframe, button=boton5,height=50, width = 150)
-boton6 = Button(raiz, image=imgBotonDerecha, command = Next).place(x=800,y=500)	
+boton6 = Button(raiz, image=imgBotonDerecha, command = Next).place(x=800,y=50)	
+Label(miframe, button=boton6,height=50, width = 150)
+inicio = 50
+intervalo = 175
+
+
+boton7_1 = Button(raiz, text ="            Clinico            ", command = Seleccionar).place(x=inicio + 0*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7 = Button(raiz, image=imgBotonSeleccion, command = Seleccionar).place(x=540,y=630)
+boton7_2 = Button(raiz, text ="            Clinico (valvula)            ", command = Seleccionar).place(x=inicio + 1*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, image=imgBotonCarpeta, command = generarCarpeta).place(x=1050,y=630)
+boton7_3 = Button(raiz, text ="            Tela         ", command = Seleccionar).place(x=inicio + 2*intervalo,y=500)
+Label(miframe, button=boton6,height=50, width = 150)
+
+boton7_4 = Button(raiz, text ="            Convencional            ", command = Seleccionar).place(x=inicio + 3*intervalo,y=500)
+Label(miframe, button=boton6,height=50, width = 150)
+
+boton7_5 = Button(raiz, text ="            Sin cubrebocas            ", command = Seleccionar).place(x=inicio + 4*intervalo,y=500)
+Label(miframe, button=boton6,height=50, width = 150)
+
+boton8 = Button(raiz, text ="            Otros            ", command = generarCarpeta).place(x=inicio + 5*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
 
