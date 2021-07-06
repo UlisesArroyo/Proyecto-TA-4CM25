@@ -1,0 +1,3 @@
+Clinico_(valvula)
+C:/Users/Arroy/Downloads/RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0029.jpg
+C:/Users/Arroy/Downloads/RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0014.jpg

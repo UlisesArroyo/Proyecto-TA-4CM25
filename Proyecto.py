@@ -6,118 +6,154 @@ import os, sys, subprocess
 from PIL import Image, ImageTk
 import shutil
 import random
+from os import path
 
-#
 
 posicionImagen=0
 carpetaAbierta=False
-rutas =[]
+rutasImagenes =[]
 listaGenerada = []
+categorias = ["Clinico", "Clinico_(valvula)", "Tela", "Convencional", "Sin_cubrebocas", "Otros"]
+lineas = [*categorias]
+# Datos de la lista: Tienen que separarse con una " , "
+datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Comentarios"]
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
-
-
 anchoImagenAdyacente = 120;
 altoImagenAdyacente = 90;
 
-
 raiz = Tk()  #ventana
-
 nombreCarpeta = tk.StringVar()
-
-raiz.title("Ventana de pruebas")
-raiz.config(bg = "orange")
-ruta_1= "img/1.png"
-ruta_2= "img/1.png"
-ruta_3= "img/1.png"
 miframe = Frame(raiz)
 miframe.pack(fill="both",expand ="True")
 miframe.config(bg = "black")
 miframe.config(width = "1280",height = "720")
 
+ruta_1= "img/1.png"
+ruta_2= "img/1.png"
+ruta_3= "img/1.png"
 imgBotonIzquierda= PhotoImage(file = "back/izq.png")
 imgBotonDerecha= PhotoImage(file = "back/der.png")
 imgBotonAbrir= PhotoImage(file = "back/abr.png")
 imgBotonSeleccion= PhotoImage(file = "back/sel.png")
 imgBotonCarpeta= PhotoImage(file = "back/car.png")
-
 imgRandom = str(random.randint(1,5))
 imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
-
 lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
 
 
 
+def buscarFicherosEnDirectorios(direccion):
+	imagenes = []
+	lista = os.listdir(direccion)
+	#print(direccion,"\n")
+	#print(lista,"\n")
+	for fichero in lista:
+		#print(fichero)
+		if os.path.isdir(direccion + "/" + fichero):
+			nuevaDireccion = direccion + fichero + "/"
+			#print(nuevaDireccion)
+			imagenes += (buscarFicherosEnDirectorios(nuevaDireccion))
+		if os.path.isfile(direccion + "/" + fichero):
+			imagenes.append(direccion + fichero)
+	return imagenes		
 
+def confirmarListas():
+	global lineas
+	try:
+		os.stat("./Listas")
+	except OSError as e:
+		os.mkdir("./Listas")	
+	x = 0
+	for categoria in categorias:
+		lista = "./Listas/" + categoria + ".txt"
+		if os.path.exists(lista):
+			
+			fichero = open(lista,"r")
+			lineas[x] = [fichero.readlines()]
+			fichero.close()
+			if len(lineas[x]) != 0:
+				print(lineas[x][0][0])
+				print(categoria)
+				if str(categoria + "\n")  != lineas[x][0][0]:
+					print("ENTRO")
+					lineas[x].insert(0,categoria +"\n")
+					fichero = open(lista,"w")
+					print("AAA",lineas[x])
+					for c in lineas[x]:
+						print("==>",c)
+						print(type(c))
+						fichero.write(c)
+					fichero.close()
+			else:
+				fichero = open(lista,"a+")
+				fichero.write(categoria +"\n")
+				fichero.close			
+		else:
+			fichero = open(lista,"a+")
+			fichero.write(categoria +"\n")
+			fichero.close
+		x += 1	
 
 def abrir_carpeta():
-	global rutas,carpetaAbierta
-	abrir_e=1
-	print(str(abrir_e))
+	global rutasImagenes,carpetaAbierta, posicionImagen
+	posicionImagen = 0
 	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               	
 	if(len(archivo_abierto) != 0):
-		print(archivo_abierto)
-		lista1 = os.listdir(archivo_abierto)	
-		print(lista1)
-		print(len(lista1))
-		rutas=[]
+		archivo_abierto += "/"
+		rutasImagenes = buscarFicherosEnDirectorios(archivo_abierto)	
+		confirmarListas()
 
-		for n in range(len(lista1)):
-			rutas.append(archivo_abierto+"/"+lista1[n])
-
-		
-		img = Image.open(rutas[posicionImagen-1]) 
+		img = Image.open(rutasImagenes[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[posicionImagen])  
+		img = Image.open(rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		img = Image.open(rutas[posicionImagen+1])  
+		img = Image.open(rutasImagenes[posicionImagen+1])  
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen3.configure(image=img)
 		Imagen3.image = img
 		
-		carpetaAbierta = True	#Activa el next y last
+		carpetaAbierta = True	#Activa el Next, Last y los botones de selección
 
 
 	
 
 def Next():
 	global posicionImagen
-	if carpetaAbierta and posicionImagen < len(rutas) :
+	if carpetaAbierta and posicionImagen < len(rutasImagenes) :
 		posicionImagen += 1
-		posicionImagen %= len(rutas)
+		posicionImagen %= len(rutasImagenes)
 		
-
-
-		img = Image.open(rutas[posicionImagen-1]) 
+		img = Image.open(rutasImagenes[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[posicionImagen])  
+		img = Image.open(rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		if(posicionImagen == len(rutas)-1):
-			img = Image.open(rutas[0])  
+		if(posicionImagen == len(rutasImagenes)-1):
+			img = Image.open(rutasImagenes[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 		else:
-			img = Image.open(rutas[posicionImagen+1])  
+			img = Image.open(rutasImagenes[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
@@ -131,43 +167,64 @@ def Last():
 	if (carpetaAbierta and posicionImagen >= 0):
 		posicionImagen -= 1
 		if(posicionImagen<0):
-			posicionImagen += len(rutas)
-		img = Image.open(rutas[posicionImagen-1]) 
+			posicionImagen += len(rutasImagenes)
+		img = Image.open(rutasImagenes[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutas[posicionImagen])  
+		img = Image.open(rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
-		if(posicionImagen==len(rutas)-1):
-			img = Image.open(rutas[0])  
+		if(posicionImagen==len(rutasImagenes)-1):
+			img = Image.open(rutasImagenes[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img		
 		else:
-			img = Image.open(rutas[posicionImagen+1])  
+			img = Image.open(rutasImagenes[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 
 
-def Seleccionar():
+def Seleccionar(categoriaSeleccionada):
 	if(carpetaAbierta):
-		if(comparador(listaGenerada,rutas[posicionImagen]) == True):
-			print("listaGenerada (old): " , listaGenerada)
-			listaGenerada.append(rutas[posicionImagen])
-			ordenar_quicksort(listaGenerada,0,len(listaGenerada)-1)
-			print("Elemento agregado: " + rutas[posicionImagen])
-			print("listaGenerada (new): " , listaGenerada)
+		ImagenNueva, listaRepetida,ubicacionImagenRepetida = comparador(rutasImagenes[posicionImagen])
+		if ImagenNueva:
+			fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
+			print("./Listas/" + categorias[categoriaSeleccionada] + ".txt")
+			fichero.write(rutasImagenes[posicionImagen]+"\n")#Funcion ingreso de datos
+			fichero.close()
+
 		else: 
-			messagebox.showinfo(message="La imagen ya se encuentra en esta Lista", title="Error")
+			if listaRepetida == categoriaSeleccionada:
+				messagebox.showinfo(message="La imagen ya se encuentra en esta Lista (" + categorias[categoriaSeleccionada]+")", title="Error")
+			else:
+				MsgBox = messagebox.askokcancel(title="Error Imagen repetida", message="Desea cambiar la imagen de " + categorias[listaRepetida] + " a " + categorias[categoriaSeleccionada])
+				if (MsgBox == 1):
+					fichero = open("./Listas/" + categorias[listaRepetida] + ".txt","r")
+					lines = fichero.readlines()
+					fichero.close()
+					fichero = open("./Listas/" + categorias[listaRepetida] + ".txt","w")
+					line=0
+					for line in range (len(lines)):
+						#print("line: " + str(line) + "\n kk: "+ str(kk))
+						if(line != ubicacionImagenRepetida):
+							fichero.write(lines[line])
+					fichero.close()				
+					fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
+					fichero.write(rutasImagenes[posicionImagen]+"\n")#Funcion ingreso de datos
+					fichero.close()	
+
+
+
 """	
 def seleccionClinico():
 	if(carpetaAbierta):
@@ -176,13 +233,35 @@ def seleccionClinico():
 
 
 
-def comparador(lista,elemento):
-	for m in range(len(lista)):
-		if(elemento == lista[m]):
-			return False
-	return True 
+def comparador(imagen):
+	global lineas
+	x = 0
+	for categoria in categorias:	
+		fichero = open("./Listas/" + categoria + ".txt","r")
+		lineas[x] = [fichero.readlines()]
+		print("XXX",lineas[x])
+		fichero.close()
+		x += 1
+
+	for categoria in range(len(categorias)):
+		print("--->",lineas[categoria])
+		print("777:", len(lineas[categoria]) - 1)
+		for linea in range(len(lineas[categoria][0]) - 1):
+			mensaje = imagen
+			mensaje = mensaje[0 : len(mensaje)]
+			print("ENTRO")
+			print(lineas[categoria][0][linea + 1])
+			print(mensaje)
+			if (mensaje +"\n") == lineas[categoria][0][linea + 1]:
+				return False, categoria, (linea + 1)
 
 
+	print("Toda la info: ",lineas)
+	return True, 0, 0
+
+
+
+"""
 def generarCarpeta():
 	global nombreCarpeta
 	if(len(listaGenerada) > 0):
@@ -194,7 +273,7 @@ def generarCarpeta():
 		nomCarp =Entry(ventana2, textvariable=nombreCarpeta).place(x=100, y=60)
 		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = lambda: desVen(ventana2)).place(x=50,y=60)		
 		Label(ventana2, button=boton4,height=50, width = 150)
-		
+"""	
 
 def desVen(ventana2):
 	global listaGenerada	
@@ -293,22 +372,22 @@ inicio = 50
 intervalo = 175
 
 
-boton7_1 = Button(raiz, text ="            Clinico            ", command = Seleccionar).place(x=inicio + 0*intervalo,y=500)
+boton7_1 = Button(raiz, text ="            Clinico            ", command = lambda: Seleccionar(0)).place(x=inicio + 0*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_2 = Button(raiz, text ="            Clinico (valvula)            ", command = Seleccionar).place(x=inicio + 1*intervalo,y=500)
+boton7_2 = Button(raiz, text ="            Clinico (valvula)            ", command = lambda: Seleccionar(1)).place(x=inicio + 1*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_3 = Button(raiz, text ="            Tela         ", command = Seleccionar).place(x=inicio + 2*intervalo,y=500)
+boton7_3 = Button(raiz, text ="            Tela         ", command = lambda: Seleccionar(2)).place(x=inicio + 2*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_4 = Button(raiz, text ="            Convencional            ", command = Seleccionar).place(x=inicio + 3*intervalo,y=500)
+boton7_4 = Button(raiz, text ="            Convencional            ", command = lambda: Seleccionar(3)).place(x=inicio + 3*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_5 = Button(raiz, text ="            Sin cubrebocas            ", command = Seleccionar).place(x=inicio + 4*intervalo,y=500)
+boton7_5 = Button(raiz, text ="            Sin cubrebocas            ", command = lambda: Seleccionar(4)).place(x=inicio + 4*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, text ="            Otros            ", command = generarCarpeta).place(x=inicio + 5*intervalo,y=500)
+boton8 = Button(raiz, text ="            Otros            ", command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
 
