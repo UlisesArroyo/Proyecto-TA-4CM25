@@ -7,7 +7,7 @@ from PIL import Image, ImageTk
 import shutil
 import random
 from os import path
-
+import cv2
 
 posicionImagen=0
 carpetaAbierta=False
@@ -200,7 +200,8 @@ def Seleccionar(categoriaSeleccionada):
 		if ImagenNueva:
 			fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
 			print("./Listas/" + categorias[categoriaSeleccionada] + ".txt")
-			fichero.write(rutasImagenes[posicionImagen]+"\n")#Funcion ingreso de datos
+			nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
+			fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 			fichero.close()
 
 		else: 
@@ -215,22 +216,42 @@ def Seleccionar(categoriaSeleccionada):
 					fichero = open("./Listas/" + categorias[listaRepetida] + ".txt","w")
 					line=0
 					for line in range (len(lines)):
-						#print("line: " + str(line) + "\n kk: "+ str(kk))
 						if(line != ubicacionImagenRepetida):
+							izq = lines[line].find(",") + 1
+							der = lines[line][izq:].find(",") + izq
+							ubicacion = lines[line][izq:der]
+							print("PRUEBA DE FUEGO->",ubicacion)
+							nombre, ubicacion, dimensiones, extension = recopilacionInformacion(ubicacion)
 							fichero.write(lines[line])
 					fichero.close()				
 					fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
-					fichero.write(rutasImagenes[posicionImagen]+"\n")#Funcion ingreso de datos
+					nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
+					fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 					fichero.close()	
 
+def recopilacionInformacion(ubicacion):
+
+	rutaNombre = os.path.split(ubicacion)
+	nombre = rutaNombre[1]
+	rutaExtension = os.path.splitext(ubicacion)
+	extension = rutaExtension[1]
+	imagen = cv2.imread(ubicacion,0)
+	alto, ancho = imagen.shape[:2]
+	dimensiones = str(alto) + "x" + str(ancho)
+	#numeroPersonas = True
+	#comentarios = ""
+	return nombre, ubicacion, dimensiones, extension #Falta numeroPersonas y comentarios
 
 
-"""	
-def seleccionClinico():
-	if(carpetaAbierta):
-"""
 
-
+class Imagen:
+	def __init__(self, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, comentarios):
+		self.nombre
+		self.ubicacion
+		self.dimensiones
+		self.tipoArchivo
+		self.numeroPersonas
+		self.comentarios
 
 
 def comparador(imagen):
@@ -249,10 +270,13 @@ def comparador(imagen):
 		for linea in range(len(lineas[categoria][0]) - 1):
 			mensaje = imagen
 			mensaje = mensaje[0 : len(mensaje)]
+			izq = lineas[categoria][0][linea + 1].find(",") + 1
+			der = lineas[categoria][0][linea + 1][izq:].find(",") + izq
+			ubicacion = lineas[categoria][0][linea + 1][izq:der]
 			print("ENTRO")
-			print(lineas[categoria][0][linea + 1])
+			print(ubicacion)
 			print(mensaje)
-			if (mensaje +"\n") == lineas[categoria][0][linea + 1]:
+			if (mensaje) == ubicacion:
 				return False, categoria, (linea + 1)
 
 
@@ -261,19 +285,7 @@ def comparador(imagen):
 
 
 
-"""
-def generarCarpeta():
-	global nombreCarpeta
-	if(len(listaGenerada) > 0):
-		print("ala chaval")
-		ventana2 = tk.Toplevel()
-		ventana2.geometry("380x300+200+100")
-		ventana2.configure(background = "dark turquoise")
-		mensaje1 =Label(ventana2,text="Ingrese nombre de la carpeta").place(x=50,y=30)
-		nomCarp =Entry(ventana2, textvariable=nombreCarpeta).place(x=100, y=60)
-		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = lambda: desVen(ventana2)).place(x=50,y=60)		
-		Label(ventana2, button=boton4,height=50, width = 150)
-"""	
+
 
 def desVen(ventana2):
 	global listaGenerada	
@@ -291,45 +303,7 @@ def desVen(ventana2):
 
 
 
-def ordenar_quicksort(lista,izq,der):
-	
-	pivote = lista[izq]		
-	i = izq					
-	j = der					
-	aux = 0					
 
-	while i < j:								
-
-		while lista[i] <= pivote and i < j:	
-			i += 1								
-
-		while lista[j] > pivote:			
-			j -= 1								
-
-		if i < j:								
-			aux = lista[i]					
-			lista[i] = lista[j]				
-			lista[j] = aux					
-
-	lista[izq] = lista[j]					
-	lista[j] = pivote							
-
-	if izq < j-1:								
-		ordenar_quicksort(lista,izq,j-1)				
-
-	if j+1 < der:								 
-		ordenar_quicksort(lista,j+1,der)
-
-
-
-	
-	
-
-
-
-
-
-	
 imagen = Image.open(ruta_1)
 imagen = imagen.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS)   #con esta madre hacemos mas chicas las imagenes de los costados para que se vea mamalon
 imagen = ImageTk.PhotoImage(image=imagen) 
