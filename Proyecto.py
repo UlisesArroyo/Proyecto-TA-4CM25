@@ -72,6 +72,15 @@ imgBotonDerecha= PhotoImage(file = "back/der.png")
 imgBotonAbrir= PhotoImage(file = "back/abr.png")
 imgBotonSeleccion= PhotoImage(file = "back/sel.png")
 imgBotonCarpeta= PhotoImage(file = "back/car.png")
+imgBotonClinico = PhotoImage(file = "back/clinico.png")
+imgBotonClinico2 = PhotoImage(file = "back/clinico2.png")
+imgBotonTela = PhotoImage(file = "back/tela.png")
+imgBotonConv = PhotoImage(file = "back/conv.png")
+imgBotonsin = PhotoImage(file = "back/sin.png")
+imgBotonOtros = PhotoImage(file = "back/otros.png")
+imgBotonPlural = PhotoImage(file = "back/plu.png")
+imgBotonSingular = PhotoImage(file = "back/sin.png")
+
 imgRandom = str(random.randint(1,5))
 imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
 lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
@@ -456,24 +465,23 @@ inicio = 50
 intervalo = 175
 
 
-boton7_1 = Button(raiz, text ="            Clinico            ", command = lambda: Seleccionar(0)).place(x=inicio + 0*intervalo,y=500)
+boton7_1 = Button(raiz, image = imgBotonClinico, command = lambda: Seleccionar(0)).place(x=inicio + 0*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_2 = Button(raiz, text ="            Clinico (valvula)            ", command = lambda: Seleccionar(1)).place(x=inicio + 1*intervalo,y=500)
+boton7_2 = Button(raiz, image = imgBotonClinico2, command = lambda: Seleccionar(1)).place(x=inicio + 1*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_3 = Button(raiz, text ="            Tela         ", command = lambda: Seleccionar(2)).place(x=inicio + 2*intervalo,y=500)
+boton7_3 = Button(raiz, image = imgBotonTela, command = lambda: Seleccionar(2)).place(x=inicio + 2*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_4 = Button(raiz, text ="            Convencional            ", command = lambda: Seleccionar(3)).place(x=inicio + 3*intervalo,y=500)
+boton7_4 = Button(raiz, image = imgBotonConv , command = lambda: Seleccionar(3)).place(x=inicio + 3*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton7_5 = Button(raiz, text ="            Sin cubrebocas            ", command = lambda: Seleccionar(4)).place(x=inicio + 4*intervalo,y=500)
+boton7_5 = Button(raiz, image = imgBotonsin, command = lambda: Seleccionar(4)).place(x=inicio + 4*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, text ="            Otros            ", command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
+boton8 = Button(raiz, image = imgBotonOtros, command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
-
 
 
 
