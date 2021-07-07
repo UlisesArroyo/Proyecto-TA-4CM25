@@ -14,9 +14,43 @@ carpetaAbierta=False
 rutasImagenes =[]
 listaGenerada = []
 categorias = ["Clinico", "Clinico_(valvula)", "Tela", "Convencional", "Sin_cubrebocas", "Otros"]
-lineas = [*categorias]
+lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
 datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Comentarios"]
+
+class Imagen:
+	def __init__(self, categoria, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, comentarios):
+		self.categoria = categoria
+		self.nombre = nombre
+		self.ubicacion = ubicacion
+		self.dimensiones = dimensiones
+		self.tipoArchivo = tipoArchivo
+		self.numeroPersonas = numeroPersonas
+		self.comentarios = comentarios
+
+	def actualizarAtributos(self, categoria, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, comentarios):
+		self.categoria = categoria
+		self.nombre = nombre
+		self.ubicacion = ubicacion
+		self.dimensiones = dimensiones
+		self.tipoArchivo = tipoArchivo
+		self.numeroPersonas = numeroPersonas
+		self.comentarios = comentarios
+
+	def infObjeto(self):
+		print("-------------------------------")
+		print("Objeto: ")
+		print(f"Categoria: {self.categoria}")
+		print(f"Nombre: {self.nombre}")
+		print(f"Ubicacion: {self.ubicacion}")
+		print(f"Dimensiones: {self.dimensiones}")
+		print(f"Tipo de archivo: {self.tipoArchivo}")
+		print(f"Numero de Personas: {self.numeroPersonas}")
+		print(f"Comentarios:  {self.comentarios}")
+		print("-------------------------------")
+
+
+objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", True, ".")
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
@@ -42,7 +76,47 @@ imgRandom = str(random.randint(1,5))
 imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
 lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
 
+def abrir_carpeta():
+	global rutasImagenes,carpetaAbierta, posicionImagen, rutaRelativa
+	posicionImagen = 0
+	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               	
+	if(len(archivo_abierto) != 0):
+		rutaRelativa = os.path.split(archivo_abierto)
+		#print("Cola: ", rutaRelativa[0])
+		#print("Cabeza: ", rutaRelativa[1])
+		archivo_abierto += "/"
+		rutasImagenes = buscarFicherosEnDirectorios(archivo_abierto)
+		rutasImagenes = modificacionrutas(rutasImagenes, rutaRelativa[1])	
+		confirmarListas(rutaRelativa[1])
 
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]) 
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen1.configure(image=img)
+		Imagen1.image = img
+
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])  
+		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen2.configure(image=img)
+		Imagen2.image = img	
+
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen + 1])  
+		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
+		img = ImageTk.PhotoImage(image=img)
+		Imagen3.configure(image=img)
+		Imagen3.image = img
+
+		refrescarInformacionLocal()
+		
+
+		carpetaAbierta = True	#Activa el Next, Last y los botones de selección
+
+def refrescarInformacionLocal():
+	imagenNueva, posicionImagenLista, categoria, numeroPersonas, comentario= comparador(rutasImagenes[posicionImagen])
+	nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])	
+	objImagen.actualizarAtributos(categoria, nombre, ubicacion, dimensiones, extension, numeroPersonas, comentario)
+	objImagen.infObjeto()
 
 def buscarFicherosEnDirectorios(direccion):
 	imagenes = []
@@ -59,17 +133,52 @@ def buscarFicherosEnDirectorios(direccion):
 			imagenes.append(direccion + fichero)
 	return imagenes		
 
-def confirmarListas():
+def modificacionrutas(imagenes, nombreCarpeta):
+	for imagen in range(len(imagenes)):
+		#print("Ruta Original: ", imagenes[imagen])
+		izq = imagenes[imagen].find(nombreCarpeta)
+		nombreRelativo = imagenes[imagen][izq:]
+		#print("Ruta Relativa: ", nombreRelativo)
+		imagenes[imagen] = nombreRelativo
+	return imagenes
+
+def confirmarListas(carpetaRaiz):
 	global lineas
+	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Comentarios" +"\n"
 	try:
 		os.stat("./Listas")
 	except OSError as e:
 		os.mkdir("./Listas")	
 	x = 0
+	lista = "./Listas/" + carpetaRaiz + ".txt"
+	if os.path.exists(lista):
+		fichero = open(lista,"r")
+		lineas = fichero.readlines()
+		fichero.close()
+		if len(lineas) != 0:
+			print(lineas[0])
+			print(indice)
+			if lineas[0] != indice:
+				print("ENTRO")
+				lineas.insert(0, indice)
+				fichero = open(lista,"w")
+				print("AAA", lineas)
+				for c in lineas:
+					print("==>",c)
+					fichero.write(c)
+				fichero.close()
+		else:
+			fichero = open(lista, "a+")
+			fichero.write(indice)
+			fichero.close()
+	else:
+		fichero = open(lista,"a+")
+		fichero.write(indice)
+		fichero.close()
+	"""		
 	for categoria in categorias:
 		lista = "./Listas/" + categoria + ".txt"
 		if os.path.exists(lista):
-			
 			fichero = open(lista,"r")
 			lineas[x] = [fichero.readlines()]
 			fichero.close()
@@ -91,69 +200,41 @@ def confirmarListas():
 				fichero.write(categoria +"\n")
 				fichero.close			
 		else:
-			fichero = open(lista,"a+")
-			fichero.write(categoria +"\n")
-			fichero.close
-		x += 1	
-
-def abrir_carpeta():
-	global rutasImagenes,carpetaAbierta, posicionImagen
-	posicionImagen = 0
-	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file")               	
-	if(len(archivo_abierto) != 0):
-		archivo_abierto += "/"
-		rutasImagenes = buscarFicherosEnDirectorios(archivo_abierto)	
-		confirmarListas()
-
-		img = Image.open(rutasImagenes[posicionImagen-1]) 
-		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
-		Imagen1.configure(image=img)
-		Imagen1.image = img
-
-		img = Image.open(rutasImagenes[posicionImagen])  
-		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
-		Imagen2.configure(image=img)
-		Imagen2.image = img	
-
-		img = Image.open(rutasImagenes[posicionImagen+1])  
-		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
-		Imagen3.configure(image=img)
-		Imagen3.image = img
 		
-		carpetaAbierta = True	#Activa el Next, Last y los botones de selección
+		x += 1	
+	"""	
+
 
 
 	
 
 def Next():
-	global posicionImagen
+	global posicionImagen, rutaRelativa
 	if carpetaAbierta and posicionImagen < len(rutasImagenes) :
 		posicionImagen += 1
 		posicionImagen %= len(rutasImagenes)
-		
-		img = Image.open(rutasImagenes[posicionImagen-1]) 
+		rutaImagenCompleta = rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]
+
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutasImagenes[posicionImagen])  
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
 		if(posicionImagen == len(rutasImagenes)-1):
-			img = Image.open(rutasImagenes[0])  
+			img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 		else:
-			img = Image.open(rutasImagenes[posicionImagen+1])  
+			img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
@@ -163,31 +244,32 @@ def Next():
 
 
 def Last():
-	global posicionImagen
+	global posicionImagen, rutaRelativa
 	if (carpetaAbierta and posicionImagen >= 0):
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutasImagenes)
-		img = Image.open(rutasImagenes[posicionImagen-1]) 
+
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]) 
 		img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen1.configure(image=img)
 		Imagen1.image = img
 
-		img = Image.open(rutasImagenes[posicionImagen])  
+		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
 		img = ImageTk.PhotoImage(image=img)
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
 		if(posicionImagen==len(rutasImagenes)-1):
-			img = Image.open(rutasImagenes[0])  
+			img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[0])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
 			Imagen3.image = img		
 		else:
-			img = Image.open(rutasImagenes[posicionImagen+1])  
+			img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen+1])  
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
@@ -196,24 +278,24 @@ def Last():
 
 def Seleccionar(categoriaSeleccionada):
 	if(carpetaAbierta):
-		ImagenNueva, listaRepetida,ubicacionImagenRepetida = comparador(rutasImagenes[posicionImagen])
+		ImagenNueva, categoriaRepetida, ubicacionImagenRepetida = comparador(rutasImagenes[posicionImagen])
 		if ImagenNueva:
-			fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
-			print("./Listas/" + categorias[categoriaSeleccionada] + ".txt")
-			nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
-			fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
+			fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
+			print("./Listas/" + rutaRelativa[1] + ".txt")
+			nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])
+			fichero.write(categorias[categoriaSeleccionada] + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 			fichero.close()
 
 		else: 
-			if listaRepetida == categoriaSeleccionada:
+			if categoriaRepetida == categorias[categoriaSeleccionada]:
 				messagebox.showinfo(message="La imagen ya se encuentra en esta Lista (" + categorias[categoriaSeleccionada]+")", title="Error")
 			else:
-				MsgBox = messagebox.askokcancel(title="Error Imagen repetida", message="Desea cambiar la imagen de " + categorias[listaRepetida] + " a " + categorias[categoriaSeleccionada])
+				MsgBox = messagebox.askokcancel(title="Error Imagen repetida", message="Desea cambiar la imagen de " + categoriaRepetida + " a " + categorias[categoriaSeleccionada])
 				if (MsgBox == 1):
-					fichero = open("./Listas/" + categorias[listaRepetida] + ".txt","r")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
 					lines = fichero.readlines()
 					fichero.close()
-					fichero = open("./Listas/" + categorias[listaRepetida] + ".txt","w")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","w")
 					line=0
 					for line in range (len(lines)):
 						if(line != ubicacionImagenRepetida):
@@ -224,13 +306,12 @@ def Seleccionar(categoriaSeleccionada):
 							nombre, ubicacion, dimensiones, extension = recopilacionInformacion(ubicacion)
 							fichero.write(lines[line])
 					fichero.close()				
-					fichero = open("./Listas/" + categorias[categoriaSeleccionada] + ".txt","a")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
 					nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
 					fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 					fichero.close()	
 
 def recopilacionInformacion(ubicacion):
-
 	rutaNombre = os.path.split(ubicacion)
 	nombre = rutaNombre[1]
 	rutaExtension = os.path.splitext(ubicacion)
@@ -238,24 +319,41 @@ def recopilacionInformacion(ubicacion):
 	imagen = cv2.imread(ubicacion,0)
 	alto, ancho = imagen.shape[:2]
 	dimensiones = str(alto) + "x" + str(ancho)
+	ubicacion = rutasImagenes[posicionImagen]
 	#numeroPersonas = True
 	#comentarios = ""
 	return nombre, ubicacion, dimensiones, extension #Falta numeroPersonas y comentarios
 
 
 
-class Imagen:
-	def __init__(self, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, comentarios):
-		self.nombre
-		self.ubicacion
-		self.dimensiones
-		self.tipoArchivo
-		self.numeroPersonas
-		self.comentarios
 
 
 def comparador(imagen):
-	global lineas
+	global lineas, rutaRelativa
+
+	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+	lineas = fichero.readlines()
+	#print("XXX",lineas)
+	fichero.close()
+	for linea in range(len(lineas) - 1):
+		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
+		ubicacion = lineas[linea + 1][izq:der]
+		ubicacion = rutaRelativa[0] + "/" +	 ubicacion 
+		print("ENTRO")
+		print("Ubicacion: ",ubicacion)
+		print("Imagen: ",imagen)
+		if imagen == ubicacion:
+			izq, der = buscarRangosDatos(0,lineas[linea + 1])
+			categoria = lineas[linea +1][izq:der]
+			izq, der = buscarRangosDatos(6,lineas[linea + 1])
+			comentario =lineas[linea + 1][izq:der]
+			izq, der = buscarRangosDatos(5,lineas[linea + 1])
+			numeroPersonas =lineas[linea + 1][izq:der]
+			return False, (linea + 1), categoria, numeroPersonas, comentario
+
+	#print("Toda la info: ",lineas)
+	return True, 0, "Sin asignar", True, "."
+"""
 	x = 0
 	for categoria in categorias:	
 		fichero = open("./Listas/" + categoria + ".txt","r")
@@ -278,10 +376,22 @@ def comparador(imagen):
 			print(mensaje)
 			if (mensaje) == ubicacion:
 				return False, categoria, (linea + 1)
-
-
 	print("Toda la info: ",lineas)
 	return True, 0, 0
+"""
+
+def buscarRangosDatos(dato, linea):
+	izq = 0
+	der = len(linea)
+	if (dato) == 0:
+		der = linea.find(",") - 1
+	for dato in range(dato):
+		izq_ = linea[izq:].find(",") + 1
+		der_ = linea[izq_:].find(",") - 1
+		izq = izq + izq_
+		der = izq + der_
+
+	return izq, der
 
 
 
