@@ -50,7 +50,7 @@ class Imagen:
 		print("-------------------------------")
 
 
-objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", True, ".")
+objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "True", ".")
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
@@ -80,7 +80,7 @@ imgBotonsin = PhotoImage(file = "back/sin.png")
 imgBotonOtros = PhotoImage(file = "back/otros.png")
 imgBotonPlural = PhotoImage(file = "back/plu.png")
 imgBotonSingular = PhotoImage(file = "back/sing.png")
-
+imgBotonComentarios = PhotoImage(file = "back/comentarios.png")
 imgRandom = str(random.randint(1,5))
 imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
 lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
@@ -106,7 +106,7 @@ def abrir_carpeta():
 
 		img = Image.open(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])  
 		img = img.resize((anchoImagenSeleccion, altoImagenSeleccion), Image.ANTIALIAS) 
-		img = ImageTk.PhotoImage(image=img)
+		img = ImageTk.PhotoImage(image=img) 
 		Imagen2.configure(image=img)
 		Imagen2.image = img	
 
@@ -117,9 +117,8 @@ def abrir_carpeta():
 		Imagen3.image = img
 
 		refrescarInformacionLocal()
-		
-
 		carpetaAbierta = True	#Activa el Next, Last y los botones de selección
+		pluralSingular(False)
 
 def refrescarInformacionLocal():
 	imagenNueva, posicionImagenLista, categoria, numeroPersonas, comentario= comparador(rutasImagenes[posicionImagen])
@@ -214,12 +213,31 @@ def confirmarListas(carpetaRaiz):
 	"""	
 
 
+def escribirLista():
+	imagenNueva, posicionImagenLista, categoria, numeroPersonas, comentario= comparador(rutasImagenes[posicionImagen])
+	nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])	
+	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+	lines = fichero.readlines()
+	fichero.close()
+	if posicionImagenLista == 0:
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
+		fichero.write(categoria + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension + "," + str(numeroPersonas) + "," + comentario + "\n")#Funcion ingreso de datos
+	else: 
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","w")
+		for line in range(len(lines)):
+			if line != posicionImagenLista:
+				fichero.write(lines[line])
+			else:
+				fichero.write(categoria + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension + "," + str(numeroPersonas) + "," + comentario + "\n")
 
-	
 
+	fichero.close()
+ 	
+ 
 def Next():
 	global posicionImagen, rutaRelativa
-	if carpetaAbierta and posicionImagen < len(rutasImagenes) :
+	if carpetaAbierta and posicionImagen < len(rutasImagenes) and objImagen.categoria != "Sin asignar":
+		escribirLista()
 		posicionImagen += 1
 		posicionImagen %= len(rutasImagenes)
 		rutaImagenCompleta = rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]
@@ -247,14 +265,19 @@ def Next():
 			img = img.resize((anchoImagenAdyacente, altoImagenAdyacente), Image.ANTIALIAS) 
 			img = ImageTk.PhotoImage(image=img)
 			Imagen3.configure(image=img)
-			Imagen3.image = img		
+			Imagen3.image = img	
 
+	
+	objImagen.actualizarAtributos("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "True", ".")
+	refrescarInformacionLocal()		
+	pluralSingular(False)
 	
 
 
 def Last():
 	global posicionImagen, rutaRelativa
-	if (carpetaAbierta and posicionImagen >= 0):
+	if (carpetaAbierta and posicionImagen >= 0 and objImagen.categoria != "Sin asignar") :
+		escribirLista()
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutasImagenes)
@@ -284,24 +307,38 @@ def Last():
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 
-def pluralSingular():
+	objImagen.actualizarAtributos("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "True", ".")		
+	refrescarInformacionLocal()
+	pluralSingular(False)
+
+def pluralSingular(entrada):
+	global objImagen
 	if carpetaAbierta:
-		objImagen.numeroPersonas = not(objImagen.numeroPersonas)
-		refrescarInformacionLocal()
-		#boton8.grid(row=1)
-		if objImagen.numeroPersonas:
-			boton8.config(image=imgBotonSingular)
-			#boton8["image"] = imgBotonSingular
+		if entrada:
+			if str(objImagen.numeroPersonas) == "True":
+				objImagen.numeroPersonas = "False"
+				boton8.config(image=imgBotonPlural)
+			else:
+				objImagen.numeroPersonas = "True"
+				boton8.config(image=imgBotonSingular)
 		else:
-			boton8.config(image=imgBotonPlural)
-			#boton8["image"] = imgBotonPlural
+			if objImagen.numeroPersonas == "True":
+				boton8.config(image=imgBotonSingular)
+				
+			if objImagen.numeroPersonas == "False":
+				boton8.config(image=imgBotonPlural)
+
+		print("numeroPersonas: ", objImagen.numeroPersonas)
+
+			
 
 def ingresarComentario():
 	if carpetaAbierta:
+		contenidoComentario.set(objImagen.comentarios)
 		ventana2 = tk.Toplevel()
 		ventana2.geometry("380x300+200+100")
 		ventana2.configure(background = "dark turquoise")
-		#Label(ventana2,image=imgFondo).place(x=0,y=0)
+		Label(ventana2,image=imgFondo).place(x=0,y=0)
 		mensaje1 =Label(ventana2,text="Ingrese Comentario").place(x=50,y=30)
 		nomCarp =Entry(ventana2, textvariable=contenidoComentario)
 		nomCarp.place(x=100, y=60, width = 250)
@@ -359,10 +396,6 @@ def Seleccionar(categoriaSeleccionada):
 					fichero.close()	
 					"""
 
-def escribirLista():
-	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
-	fichero.write(categorias[categoriaSeleccionada] + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
-	fichero.close()
 
 def recopilacionInformacion(ubicacion):
 	rutaNombre = os.path.split(ubicacion)
@@ -391,21 +424,22 @@ def comparador(imagen):
 	for linea in range(len(lineas) - 1):
 		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
 		ubicacion = lineas[linea + 1][izq:der]
-		ubicacion = rutaRelativa[0] + "/" +	 ubicacion 
 		print("ENTRO")
 		print("Ubicacion: ",ubicacion)
 		print("Imagen: ",imagen)
 		if imagen == ubicacion:
+			print("GANE >:]")
 			izq, der = buscarRangosDatos(0,lineas[linea + 1])
 			categoria = lineas[linea +1][izq:der]
 			izq, der = buscarRangosDatos(6,lineas[linea + 1])
 			comentario =lineas[linea + 1][izq:der]
 			izq, der = buscarRangosDatos(5,lineas[linea + 1])
 			numeroPersonas =lineas[linea + 1][izq:der]
-			if objImagen == "Sin asignar":
+			if objImagen.categoria == "Sin asignar":
 				return False, (linea + 1), categoria, numeroPersonas, comentario
 			else:
 				return False, (linea + 1), objImagen.categoria, objImagen.numeroPersonas, objImagen.comentarios
+
 
 	#print("Toda la info: ",lineas)
 
@@ -439,31 +473,27 @@ def comparador(imagen):
 """
 
 def buscarRangosDatos(dato, linea):
-	izq = 0
-	der = len(linea)
-	if (dato) == 0:
-		der = linea.find(",") - 1
-	for dato in range(dato):
-		izq_ = linea[izq:].find(",") + 1
-		der_ = linea[izq_:].find(",") - 1
-		izq = izq + izq_
-		der = izq + der_
+	listaIndices = [0]
+	for i in range(len(linea)):
+		if linea[i] == ",":
+			listaIndices.append(i)
+	listaIndices.append(len(linea))
+	if dato * 2 == 0:
+		izq = listaIndices[(dato)]
+	else:
+		izq = listaIndices[(dato)] + 1
 
+	if 	listaIndices[(dato) + 1] == len(linea):
+		der = listaIndices[(dato) + 1] - 1
+	else: 
+		der = listaIndices[(dato) + 1]
+
+	print("listaIndices: ", listaIndices)
+	print(f"izq: {izq}|| der: {der}|| dato: {dato}")
 	return izq, der
 
 
 
-
-
-def desVen(ventana2):
-	global listaGenerada	
-	ventana2.destroy()
-	print("nombreCarpeta: " +    nombreCarpeta.get())
-	os.mkdir(nombreCarpeta.get())
-	for imagen in listaGenerada:
-		direccion,nombre = os.path.split(imagen)
-		shutil.copy(imagen, nombreCarpeta.get() + "/"+nombre)
-	listaGenerada = []	
 
 
 
@@ -532,12 +562,12 @@ Label(miframe, button=boton6,height=50, width = 150)
 boton7_6 = Button(raiz, image = imgBotonOtros, command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, image = imgBotonSingular, command = pluralSingular)
+boton8 = Button(raiz, image = imgBotonSingular, command = lambda: pluralSingular(True))
 boton8.place(x=inicio + 2*intervalo,y=600)
 
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton9 = Button(raiz, image = imgBotonOtros, command = ingresarComentario)
+boton9 = Button(raiz, image = imgBotonComentarios, command = ingresarComentario)
 boton9.place(x=inicio + 4*intervalo,y=600)
 Label(miframe, button=boton6,height=50, width = 150)
 
