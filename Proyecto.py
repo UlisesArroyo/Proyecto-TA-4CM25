@@ -58,7 +58,7 @@ anchoImagenAdyacente = 120;
 altoImagenAdyacente = 90;
 
 raiz = Tk()  #ventana
-nombreCarpeta = tk.StringVar()
+contenidoComentario = tk.StringVar()
 miframe = Frame(raiz)
 miframe.pack(fill="both",expand ="True")
 miframe.config(bg = "black")
@@ -79,7 +79,7 @@ imgBotonConv = PhotoImage(file = "back/conv.png")
 imgBotonsin = PhotoImage(file = "back/sin.png")
 imgBotonOtros = PhotoImage(file = "back/otros.png")
 imgBotonPlural = PhotoImage(file = "back/plu.png")
-imgBotonSingular = PhotoImage(file = "back/sin.png")
+imgBotonSingular = PhotoImage(file = "back/sing.png")
 
 imgRandom = str(random.randint(1,5))
 imgFondo = PhotoImage(file = "back/f"+imgRandom+".png")
@@ -284,23 +284,61 @@ def Last():
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 
+def pluralSingular():
+	if carpetaAbierta:
+		objImagen.numeroPersonas = not(objImagen.numeroPersonas)
+		refrescarInformacionLocal()
+		#boton8.grid(row=1)
+		if objImagen.numeroPersonas:
+			boton8.config(image=imgBotonSingular)
+			#boton8["image"] = imgBotonSingular
+		else:
+			boton8.config(image=imgBotonPlural)
+			#boton8["image"] = imgBotonPlural
+
+def ingresarComentario():
+	if carpetaAbierta:
+		ventana2 = tk.Toplevel()
+		ventana2.geometry("380x300+200+100")
+		ventana2.configure(background = "dark turquoise")
+		#Label(ventana2,image=imgFondo).place(x=0,y=0)
+		mensaje1 =Label(ventana2,text="Ingrese Comentario").place(x=50,y=30)
+		nomCarp =Entry(ventana2, textvariable=contenidoComentario)
+		nomCarp.place(x=100, y=60, width = 250)
+		boton4 = Button(ventana2, text ="OK", font=(18),fg="blue", command = lambda: cerrarVentana(ventana2)).place(x=50,y=60)		
+		Label(ventana2, button=boton4,height=50, width = 150)
+
+def cerrarVentana(ventana2):
+	ventana2.destroy()
+	print("comentario: " +    contenidoComentario.get())
+	objImagen.comentarios = contenidoComentario.get()
+	refrescarInformacionLocal();
+	
+
+		
 
 def Seleccionar(categoriaSeleccionada):
 	if(carpetaAbierta):
-		ImagenNueva, categoriaRepetida, ubicacionImagenRepetida = comparador(rutasImagenes[posicionImagen])
-		if ImagenNueva:
+		imagenNueva, posicionImagenLista, categoria, numeroPersonas, comentario = comparador(rutasImagenes[posicionImagen])
+		if imagenNueva:
+			objImagen.categoria = categorias[categoriaSeleccionada]
+			refrescarInformacionLocal()
+			"""
 			fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
 			print("./Listas/" + rutaRelativa[1] + ".txt")
 			nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])
 			fichero.write(categorias[categoriaSeleccionada] + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 			fichero.close()
-
+			"""
 		else: 
-			if categoriaRepetida == categorias[categoriaSeleccionada]:
+			if objImagen.categoria == categorias[categoriaSeleccionada]:
 				messagebox.showinfo(message="La imagen ya se encuentra en esta Lista (" + categorias[categoriaSeleccionada]+")", title="Error")
 			else:
-				MsgBox = messagebox.askokcancel(title="Error Imagen repetida", message="Desea cambiar la imagen de " + categoriaRepetida + " a " + categorias[categoriaSeleccionada])
+				MsgBox = messagebox.askokcancel(title="Error Imagen repetida", message="Desea cambiar la imagen de " + objImagen.categoria + " a " + categorias[categoriaSeleccionada])
 				if (MsgBox == 1):
+					objImagen.categoria = categorias[categoriaSeleccionada]
+					refrescarInformacionLocal()
+					"""
 					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
 					lines = fichero.readlines()
 					fichero.close()
@@ -319,6 +357,12 @@ def Seleccionar(categoriaSeleccionada):
 					nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
 					fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
 					fichero.close()	
+					"""
+
+def escribirLista():
+	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
+	fichero.write(categorias[categoriaSeleccionada] + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
+	fichero.close()
 
 def recopilacionInformacion(ubicacion):
 	rutaNombre = os.path.split(ubicacion)
@@ -358,10 +402,15 @@ def comparador(imagen):
 			comentario =lineas[linea + 1][izq:der]
 			izq, der = buscarRangosDatos(5,lineas[linea + 1])
 			numeroPersonas =lineas[linea + 1][izq:der]
-			return False, (linea + 1), categoria, numeroPersonas, comentario
+			if objImagen == "Sin asignar":
+				return False, (linea + 1), categoria, numeroPersonas, comentario
+			else:
+				return False, (linea + 1), objImagen.categoria, objImagen.numeroPersonas, objImagen.comentarios
 
 	#print("Toda la info: ",lineas)
-	return True, 0, "Sin asignar", True, "."
+
+
+	return (objImagen.categoria == "Sin asignar"), 0, objImagen.categoria, objImagen.numeroPersonas, objImagen.comentarios
 """
 	x = 0
 	for categoria in categorias:	
@@ -480,12 +529,17 @@ Label(miframe, button=boton6,height=50, width = 150)
 boton7_5 = Button(raiz, image = imgBotonsin, command = lambda: Seleccionar(4)).place(x=inicio + 4*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
-boton8 = Button(raiz, image = imgBotonOtros, command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
+boton7_6 = Button(raiz, image = imgBotonOtros, command = lambda: Seleccionar(5)).place(x=inicio + 5*intervalo,y=500)
 Label(miframe, button=boton6,height=50, width = 150)
 
+boton8 = Button(raiz, image = imgBotonSingular, command = pluralSingular)
+boton8.place(x=inicio + 2*intervalo,y=600)
 
+Label(miframe, button=boton6,height=50, width = 150)
 
-
+boton9 = Button(raiz, image = imgBotonOtros, command = ingresarComentario)
+boton9.place(x=inicio + 4*intervalo,y=600)
+Label(miframe, button=boton6,height=50, width = 150)
 
 def boton_p(event):
 	
