@@ -1,4 +1,4 @@
-Categoria,Nombre,Ubicacion,Dimensiones,Tipo de archivo,Numero de Personas,Comentarios
+Categoria,Nombre,Ubicacion,Dimensiones,Tipo de archivo,Numero de Personas,Simulacion,Recortado,Comentarios
 Clinico,0_0_0.jpg,Base/AFDB_masked_face_dataset/aidai/0_0_0.jpg,394x257,.jpg,Plural,Simulado,Recortado,.
 Clinico,0_0_1.jpg,Base/AFDB_masked_face_dataset/aidai/0_0_1.jpg,197x130,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Clinico,0_0_5.jpg,Base/AFDB_masked_face_dataset/anhu/0_0_5.jpg,148x109,.jpg,Singular,NO_Simulado,NO_Recortado,.

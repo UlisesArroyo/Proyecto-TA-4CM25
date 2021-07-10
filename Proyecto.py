@@ -186,7 +186,7 @@ def modificacionrutas(imagenes, nombreCarpeta):
 
 def confirmarListas(carpetaRaiz):
 	global lineas
-	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Comentarios" +"\n"
+	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Simulacion" + "," + "Recortado"+  "," + "Comentarios" +"\n"
 	try:
 		os.stat("./Listas")
 	except OSError as e:
