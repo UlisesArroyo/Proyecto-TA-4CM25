@@ -16,7 +16,7 @@ listaGenerada = []
 categorias = ["Clinico", "Clinico_(valvula)", "Tela", "Convencional", "Sin_cubrebocas", "Otros"]
 lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
-datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Comentarios"]
+datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Simulacion", "Recortado", "Comentarios"]
 
 class Imagen:
 	def __init__(self, categoria, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, simulado, recortado, comentarios):
@@ -56,7 +56,7 @@ class Imagen:
 		print("-------------------------------")
 
 
-objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "NO_Recortado", ".")
+objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "Recortado", ".")
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
@@ -339,7 +339,7 @@ def Last():
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 
-		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "NO_Recortado", ".")
+		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "Recortado", ".")
 		refrescarInformacionLocal()
 		pluralSingular(False)
 		simulado(False)
@@ -362,7 +362,7 @@ def pluralSingular(entrada):
 			if objImagen.numeroPersonas == "Plural":
 				boton8.config(image=imgBotonPlural)
 
-		print("numeroPersonas: ", objImagen.numeroPersonas)
+		#print("numeroPersonas: ", objImagen.numeroPersonas)
 		actualizarPantalla()
 
 def simulado(entrada):
@@ -382,7 +382,7 @@ def simulado(entrada):
 			if objImagen.simulado == "Simulado":
 				boton10.config(text="Simulado (X)", bg =  "orange")
 
-		print("simulado: ", objImagen.simulado)
+		#print("simulado: ", objImagen.simulado)
 		actualizarPantalla()
 
 def recortado(entrada):
@@ -402,7 +402,7 @@ def recortado(entrada):
 			if objImagen.recortado == "Recortado":
 				boton11.config(text="Recortado (V)", bg = "orange")
 
-		print("recortado: ", objImagen.recortado)
+		#print("recortado: ", objImagen.recortado)
 		actualizarPantalla()				
 
 def ingresarComentario(entrada):
@@ -477,7 +477,7 @@ def Seleccionar(categoriaSeleccionada):
 
 
 def recopilacionInformacion(ubicacion):
-	print("UBICACION PROBLEMA: ", ubicacion)
+	#print("UBICACION PROBLEMA: ", ubicacion)
 	rutaNombre = os.path.split(ubicacion)
 	nombre = rutaNombre[1]
 	rutaExtension = os.path.splitext(ubicacion)
@@ -502,11 +502,11 @@ def comparador(imagen):
 	for linea in range(len(lineas) - 1):
 		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
 		ubicacion = lineas[linea + 1][izq:der]
-		print("ENTRO")
-		print("Ubicacion: ",ubicacion)
-		print("Imagen: ",imagen)
+		#print("ENTRO")
+		#print("Ubicacion: ",ubicacion)
+		#print("Imagen: ",imagen)
 		if imagen == ubicacion:
-			print("GANE >:]")
+			#print("GANE >:]")
 			izq, der = buscarRangosDatos(0,lineas[linea + 1])
 			categoria = lineas[linea +1][izq:der]
 			izq, der = buscarRangosDatos(5,lineas[linea + 1])
@@ -570,8 +570,8 @@ def buscarRangosDatos(dato, linea):
 	else: 
 		der = listaIndices[(dato) + 1]
 
-	print("listaIndices: ", listaIndices)
-	print(f"izq: {izq}|| der: {der}|| dato: {dato}")
+	#print("listaIndices: ", listaIndices)
+	#print(f"izq: {izq}|| der: {der}|| dato: {dato}")
 	return izq, der
 
 
