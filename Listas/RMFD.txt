@@ -1,9 +1,10 @@
 Categoria,Nombre,Ubicacion,Dimensiones,Tipo de archivo,Numero de Personas,Comentarios
-Clinico,0_0_aidai_0014.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0014.jpg,147x140,.jpg,True,adios
+Clinico,0_0_aidai_0014.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0014.jpg,147x140,.jpg,False,tacubaya 
 Clinico_(valvula),0_0_aidai_0029.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0029.jpg,135x152,.jpg,False,2
 Tela,0_0_aidai_0043.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0043.jpg,127x146,.jpg,True,3
 Convencional,0_0_aidai_0074.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0074.jpg,121x148,.jpg,False,4
 Sin_cubrebocas,0_0_aidai_0080.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0080.jpg,131x146,.jpg,True,5
 Otros,0_0_aidai_0084.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0084.jpg,132x139,.jpg,True,7
 Clinico,0_0_aidai_0136.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0136.jpg,141x145,.jpg,True,8
-
+Otros,0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_masked_face_dataset/zuojinzhu/0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg,251x254,.jpg,False,ASUMAKINA
+Clinico_(valvula),0_0_aidai_0168.jpg,RMFD/self-built-masked-face-recognition-dataset/AFDB_face_dataset/aidai/0_0_aidai_0168.jpg,133x144,.jpg,True,.
