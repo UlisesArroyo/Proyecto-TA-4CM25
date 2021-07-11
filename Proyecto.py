@@ -18,8 +18,8 @@ lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
 datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Simulacion", "Recortado", "Comentarios"]
 
-#estandarRecortado = "NO_Recortado" 
-estandarRecortado = "Recortado"
+estandarRecortado = "NO_Recortado" 
+#estandarRecortado = "Recortado"
 
 class Imagen:
 	def __init__(self, categoria, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, simulado, recortado, comentarios):
