@@ -173,3 +173,177 @@ Tela,1_0_3.jpg,Base/AFDB_masked_face_dataset/guojingjing/1_0_3.jpg,268x189,.jpg,
 Otros,1_0_1.jpg,Base/AFDB_masked_face_dataset/guojunchen/1_0_1.jpg,311x256,.jpg,Singular,NO_Simulado,Recortado,Se cubre con ropa
 Convencional,0_0_4e2f9179ly3gbdq9xefr3j20zk0zke74.jpg,Base/AFDB_masked_face_dataset/guoxiaofeng/0_0_4e2f9179ly3gbdq9xefr3j20zk0zke74.jpg,430x301,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/haiqing/0_0_6.jpg,164x113,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_+·Îó 2020-02-24 222124.png,Base/AFDB_masked_face_dataset/handongjun/0_0_+·Îó 2020-02-24 222124.png,266x168,.png,Singular,NO_Simulado,Recortado,.
+Tela,0_0_+·Îó 2020-02-24 222132.png,Base/AFDB_masked_face_dataset/handongjun/0_0_+·Îó 2020-02-24 222132.png,291x236,.png,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/hangeng/0_0_2.jpg,147x105,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/hanqingzi/0_0_0.jpg,155x103,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_2.jpg,Base/AFDB_masked_face_dataset/hanxue/0_0_2.jpg,149x107,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_u=458093892,1923361536&fm=26&gp=0.jpg,Base/AFDB_masked_face_dataset/haofeier/0_0_u=458093892,1923361536&fm=26&gp=0.jpg,126x101,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_0.jpg,469x336,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_11.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_11.jpg,187x117,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_12.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_12.jpg,205x173,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_14.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_14.jpg,188x121,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_16.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_16.jpg,188x152,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_18.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_18.jpg,405x284,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Tela,0_0_19.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_19.jpg,185x134,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_20.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_20.jpg,368x314,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_24.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_24.jpg,138x109,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_3.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_3.jpg,142x101,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_37.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_37.jpg,143x120,.jpg,Singular,NO_Simulado,Recortado,Mal Puesto
+Tela,0_0_47.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_47.jpg,176x108,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_5.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_5.jpg,147x105,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_7.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_7.jpg,274x201,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_8.jpg,Base/AFDB_masked_face_dataset/houminghao/0_0_8.jpg,144x112,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_1_2.jpg,Base/AFDB_masked_face_dataset/houminghao/0_1_2.jpg,185x105,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_1.jpg,Base/AFDB_masked_face_dataset/houminghao/1_0_1.jpg,168x118,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_6.jpg,Base/AFDB_masked_face_dataset/houminghao/1_0_6.jpg,199x129,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_9.jpg,Base/AFDB_masked_face_dataset/houminghao/1_0_9.jpg,143x106,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_12.jpg,Base/AFDB_masked_face_dataset/houpeicen/0_0_12.jpg,164x116,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/huangbo/0_0_0.jpg,309x229,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/huangbo/0_0_1.jpg,136x118,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_13.jpg,Base/AFDB_masked_face_dataset/huanghaibo/0_0_13.jpg,231x171,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,0_0_66f2c159jw1e8jurshmssj20dm0i80ul.jpg,Base/AFDB_masked_face_dataset/huangjinglun/0_0_66f2c159jw1e8jurshmssj20dm0i80ul.jpg,167x107,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_10.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_10.jpg,262x214,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_17.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_17.jpg,267x170,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_18.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_18.jpg,127x126,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_2.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_2.jpg,251x141,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_3.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_3.jpg,152x128,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_5.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_5.jpg,286x216,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_6.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_6.jpg,189x128,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_8.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_0_8.jpg,270x190,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_1_18.jpg,Base/AFDB_masked_face_dataset/huangjingyu/0_1_18.jpg,140x126,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_7.jpg,Base/AFDB_masked_face_dataset/huangjingyu/1_0_7.jpg,194x113,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_9.jpg,Base/AFDB_masked_face_dataset/huangjingyu/1_0_9.jpg,286x180,.jpg,Singular,Simulado,Recortado,.
+Clinico_(valvula),0_0_7.jpg,Base/AFDB_masked_face_dataset/huanglei/0_0_7.jpg,224x175,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_1_13.jpg,Base/AFDB_masked_face_dataset/huanglei/0_1_13.jpg,118x101,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0073OyrFly1gbeb25kg0oj30u00u0tdt.jpg,Base/AFDB_masked_face_dataset/huangrihua/0_0_0073OyrFly1gbeb25kg0oj30u00u0tdt.jpg,154x118,.jpg,Singular,Simulado,Recortado,.
+Clinico,0_0_0073OyrFly1gbeb261k8aj30u00u0whj.jpg,Base/AFDB_masked_face_dataset/huangrihua/0_0_0073OyrFly1gbeb261k8aj30u00u0whj.jpg,248x181,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_0073OyrFly1gbeb26lbnuj30u00u0whr.jpg,Base/AFDB_masked_face_dataset/huangrihua/0_0_0073OyrFly1gbeb26lbnuj30u00u0whr.jpg,228x189,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_0073OyrFly1gbeb27csuhj30u00u00vh.jpg,Base/AFDB_masked_face_dataset/huangrihua/0_0_0073OyrFly1gbeb27csuhj30u00u00vh.jpg,202x145,.jpg,Singular,Simulado,Recortado,.
+Clinico,0_0_0073OyrFly1gbeb28c8vmj30u00u042e.jpg,Base/AFDB_masked_face_dataset/huangrihua/0_0_0073OyrFly1gbeb28c8vmj30u00u042e.jpg,214x148,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/huangshengyi/0_0_0.jpg,687x445,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_0.jpg,224x157,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_1.jpg,176x108,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_12.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_12.jpg,210x123,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_20.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_20.jpg,168x112,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_25.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_25.jpg,152x128,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_26.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_26.jpg,182x107,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_3.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_3.jpg,165x111,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/huangtingting/0_0_6.jpg,134x107,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_6.jpg,Base/AFDB_masked_face_dataset/huangxiaoming/0_0_6.jpg,189x125,.jpg,Singular,NO_Simulado,Recortado,.
+Clinico,0_0_7.jpg,Base/AFDB_masked_face_dataset/huangxiaoming/0_0_7.jpg,155x130,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_11.jpg,Base/AFDB_masked_face_dataset/huangxuan/0_0_11.jpg,131x114,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_22.jpg,Base/AFDB_masked_face_dataset/huangxuan/0_0_22.jpg,190x121,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_+·Îó 2020-02-23 132115.png,Base/AFDB_masked_face_dataset/huangzhiwei/0_0_+·Îó 2020-02-23 132115.png,318x218,.png,Singular,NO_Simulado,Recortado,.
+Tela,0_0_+·Îó 2020-02-23 132144.png,Base/AFDB_masked_face_dataset/huangzhiwei/0_0_+·Îó 2020-02-23 132144.png,317x228,.png,Singular,NO_Simulado,Recortado,.
+Otros,0_0_0.png,Base/AFDB_masked_face_dataset/huangzhongkun/0_0_0.png,222x146,.png,Singular,NO_Simulado,Recortado,No es cubrebocas
+Otros,0_0_1.jpg,Base/AFDB_masked_face_dataset/huangzitao/0_0_1.jpg,206x137,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Otros,0_0_11.jpg,Base/AFDB_masked_face_dataset/huangzitao/0_0_11.jpg,191x142,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Tela,0_0_14.jpg,Base/AFDB_masked_face_dataset/huangzitao/0_0_14.jpg,242x167,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_2.jpg,Base/AFDB_masked_face_dataset/huangzitao/0_0_2.jpg,146x125,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Clinico,0_0_1.jpg,Base/AFDB_masked_face_dataset/huangzongze/0_0_1.jpg,322x209,.jpg,Singular,Simulado,Recortado,.
+Convencional,1_0_2.jpg,Base/AFDB_masked_face_dataset/huangzongze/1_0_2.jpg,216x144,.jpg,Singular,NO_Simulado,Recortado,.
+Clinico_(valvula),0_0_0.jpg,Base/AFDB_masked_face_dataset/huashao/0_0_0.jpg,159x103,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_33.jpg,Base/AFDB_masked_face_dataset/hujing/0_0_33.jpg,161x116,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_0.jpg,234x155,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_2.jpg,213x152,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_21.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_21.jpg,436x298,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_27.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_27.jpg,141x125,.jpg,Singular,NO_Simulado,Recortado,Mal puesto 
+Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_6.jpg,312x238,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_8.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_8.jpg,134x110,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Clinico,0_0_9.jpg,Base/AFDB_masked_face_dataset/huojianhua/0_0_9.jpg,229x160,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,1_0_10.jpg,Base/AFDB_masked_face_dataset/huojianhua/1_0_10.jpg,330x181,.jpg,Singular,NO_Simulado,Recortado,No es cubrebocas
+Clinico,1_0_15.jpg,Base/AFDB_masked_face_dataset/huojianhua/1_0_15.jpg,333x201,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_19.jpg,Base/AFDB_masked_face_dataset/huosiyan/0_0_19.jpg,159x100,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/huozun/0_0_6.jpg,1107x676,.jpg,Singular,NO_Simulado,Recortado,.
+Clinico,0_0_7.jpg,Base/AFDB_masked_face_dataset/huozun/0_0_7.jpg,389x259,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_8.jpg,Base/AFDB_masked_face_dataset/huozun/0_0_8.jpg,395x277,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_18.jpg,Base/AFDB_masked_face_dataset/huxia/0_0_18.jpg,156x103,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/huyanbin/0_0_0.jpg,186x157,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/huyanbin/0_0_1.jpg,145x120,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jianailiang/0_0_0.jpg,138x120,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_5.jpg,Base/AFDB_masked_face_dataset/jianailiang/0_0_5.jpg,211x160,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,1_0_1.jpg,Base/AFDB_masked_face_dataset/jianailiang/1_0_1.jpg,131x101,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_46fe0b54jw1eysjnlcazwj20dc0hsac0.jpg,Base/AFDB_masked_face_dataset/jianghongbo/0_0_46fe0b54jw1eysjnlcazwj20dc0hsac0.jpg,314x223,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_46fe0b54jw1eysjnlrwdqj20dc0hsmz3.jpg,Base/AFDB_masked_face_dataset/jianghongbo/0_0_46fe0b54jw1eysjnlrwdqj20dc0hsmz3.jpg,314x225,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_46fe0b54jw1eysjnm85f3j20dc0hs40a.jpg,Base/AFDB_masked_face_dataset/jianghongbo/0_0_46fe0b54jw1eysjnm85f3j20dc0hs40a.jpg,322x224,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_2.jpg,Base/AFDB_masked_face_dataset/jiangjinfu/0_0_2.jpg,422x231,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/jiangminhe/0_0_0.jpg,301x207,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_19.jpg,Base/AFDB_masked_face_dataset/jiangminhe/0_0_19.jpg,198x152,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_27.jpg,Base/AFDB_masked_face_dataset/jiangminhe/0_0_27.jpg,179x101,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_6.jpg,Base/AFDB_masked_face_dataset/jiangminhe/0_0_6.jpg,324x264,.jpg,Singular,NO_Simulado,Recortado,.
+Clinico,0_0_0.png,Base/AFDB_masked_face_dataset/jiangwen/0_0_0.png,345x271,.png,Singular,Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/jiangxin/0_0_0.jpg,244x169,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_ac4bd11373f082023933e9493e5931e8aa641b4e.jpeg,Base/AFDB_masked_face_dataset/jiangxin/0_0_ac4bd11373f082023933e9493e5931e8aa641b4e.jpeg,196x130,.jpeg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/jiangyiyi/0_0_0.jpg,161x113,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/jikejuanyi/0_0_1.jpg,234x183,.jpg,Singular,Simulado,Recortado,.
+Clinico,0_0_2.jpg,Base/AFDB_masked_face_dataset/jikejuanyi/0_0_2.jpg,293x205,.jpg,Singular,Simulado,Recortado,.
+Clinico,1_0_0.jpg,Base/AFDB_masked_face_dataset/jikejuanyi/1_0_0.jpg,609x473,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jinchen/0_0_0.jpg,629x496,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_10.jpg,Base/AFDB_masked_face_dataset/jinchen/0_0_10.jpg,168x126,.jpg,Singular,NO_Simulado,Recortado,.
+Clinico,0_0_2.jpg,Base/AFDB_masked_face_dataset/jinchen/0_0_2.jpg,448x305,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_4.jpg,Base/AFDB_masked_face_dataset/jinchen/0_0_4.jpg,159x117,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/jindong/0_0_6.jpg,202x188,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_8.jpg,Base/AFDB_masked_face_dataset/jindong/0_0_8.jpg,176x125,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_0.jpg,Base/AFDB_masked_face_dataset/jindong/1_0_0.jpg,194x143,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jingbairan/0_0_0.jpg,207x144,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/jingbairan/0_0_2.jpg,199x146,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_1_7.jpg,Base/AFDB_masked_face_dataset/jingbairan/0_1_7.jpg,182x132,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_16.jpg,Base/AFDB_masked_face_dataset/jingtian/0_0_16.jpg,126x144,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_27.jpg,Base/AFDB_masked_face_dataset/jingtian/0_0_27.jpg,125x101,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_41.jpg,Base/AFDB_masked_face_dataset/jingtian/0_0_41.jpg,192x126,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,1_0_22.jpg,Base/AFDB_masked_face_dataset/jingtian/1_0_22.jpg,175x134,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_35.jpg,Base/AFDB_masked_face_dataset/jinjifan/0_0_35.jpg,134x100,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Otros,0_0_47.jpg,Base/AFDB_masked_face_dataset/jinjifan/0_0_47.jpg,231x152,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/jinjifan/0_0_6.jpg,198x131,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,1_0_0.jpg,Base/AFDB_masked_face_dataset/jinminshuo/1_0_0.jpg,114x101,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Tela,0_0_8.jpg,Base/AFDB_masked_face_dataset/jinnanjun/0_0_8.jpg,544x388,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jinshuozhen/0_0_0.jpg,633x425,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/jinshuozhen/0_0_1.jpg,167x108,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/jinshuozhen/0_0_2.jpg,276x180,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_24.jpg,Base/AFDB_masked_face_dataset/jinshuozhen/0_0_24.jpg,273x215,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jintaiyan/0_0_0.jpg,268x185,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/jintaiyan/0_0_1.jpg,378x313,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/jintaiyan/0_0_2.jpg,337x296,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_5.jpg,Base/AFDB_masked_face_dataset/jintaiyan/0_0_5.jpg,483x355,.jpg,Singular,Simulado,Recortado,.
+Convencional,1_0_3.jpg,Base/AFDB_masked_face_dataset/jintaiyan/1_0_3.jpg,228x199,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/jinxiuxian/0_0_0.jpg,268x173,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/jinyubin/0_0_0.jpg,174x111,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/jinzaizhong/0_0_0.jpg,163x106,.jpg,Singular,Simulado,Recortado,.
+Convencional,0_0_0.png,Base/AFDB_masked_face_dataset/jinzhongguo/0_0_0.png,325x207,.png,Singular,Simulado,Recortado,.
+Tela,0_0_5.jpg,Base/AFDB_masked_face_dataset/jinzhongren/0_0_5.jpg,388x315,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_10.jpg,Base/AFDB_masked_face_dataset/jujingyi/0_0_10.jpg,216x157,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_2.jpg,Base/AFDB_masked_face_dataset/jujingyi/1_0_2.jpg,251x208,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_40_161108111055_1.jpg,Base/AFDB_masked_face_dataset/lanxi/0_0_40_161108111055_1.jpg,326x217,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,1_1_2.jpg,Base/AFDB_masked_face_dataset/lanyingying/1_1_2.jpg,106x100,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_22.jpg,Base/AFDB_masked_face_dataset/leijiayin/0_0_22.jpg,159x133,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/liangchaowei/0_0_2.jpg,208x127,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_+·Îó 2020-02-24 215234.png,Base/AFDB_masked_face_dataset/liankai/0_0_+·Îó 2020-02-24 215234.png,456x245,.png,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/licaihua/0_0_0.jpg,424x261,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_+·Îó 2020-02-25 150355.png,Base/AFDB_masked_face_dataset/lichangxuan/0_0_+·Îó 2020-02-25 150355.png,224x243,.png,Singular,NO_Simulado,Recortado,Mal puesto
+Otros,0_0_+·Îó 2020-02-25 150422.png,Base/AFDB_masked_face_dataset/lichangxuan/0_0_+·Îó 2020-02-25 150422.png,195x156,.png,Singular,NO_Simulado,Recortado,Mal puesto
+Otros,1_0_+·Îó 2020-02-25 150412.png,Base/AFDB_masked_face_dataset/lichangxuan/1_0_+·Îó 2020-02-25 150412.png,140x102,.png,Singular,NO_Simulado,Recortado,Mal puesto
+Tela,0_0_23.jpg,Base/AFDB_masked_face_dataset/lichen/0_0_23.jpg,233x210,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/lidaimo/0_0_1.jpg,456x281,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,0_0_3.jpg,Base/AFDB_masked_face_dataset/lidaimo/0_0_3.jpg,159x130,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,1_0_21.jpg,Base/AFDB_masked_face_dataset/lidaimo/1_0_21.jpg,258x259,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,1_0_5.jpg,Base/AFDB_masked_face_dataset/lidaimo/1_0_5.jpg,175x148,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/lidongxu/0_0_0.jpg,517x335,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/lidongxu/0_0_1.jpg,486x329,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_16.jpg,Base/AFDB_masked_face_dataset/lifeier/0_0_16.jpg,276x207,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,1_0_4.jpg,Base/AFDB_masked_face_dataset/lifeier/1_0_4.jpg,156x125,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/lilianjie/0_0_0.jpg,379x286,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_22.jpg,Base/AFDB_masked_face_dataset/lilianjie/0_0_22.jpg,122x103,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_4.jpg,Base/AFDB_masked_face_dataset/lilianjie/0_0_4.jpg,182x220,.jpg,Singular,Simulado,Recortado,.
+Tela,1_1_19.jpg,Base/AFDB_masked_face_dataset/lilianjie/1_1_19.jpg,100x113,.jpg,Singular,Simulado,Recortado,.
+Tela,1_1_4.jpg,Base/AFDB_masked_face_dataset/lilianjie/1_1_4.jpg,190x231,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/liminhao/0_0_0.jpg,246x167,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_2.jpg,Base/AFDB_masked_face_dataset/liminhao/0_0_2.jpg,540x557,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_21.jpg,Base/AFDB_masked_face_dataset/liminhao/0_0_21.jpg,179x152,.jpg,Singular,NO_Simulado,Recortado,.
+Tela,0_0_4.jpg,Base/AFDB_masked_face_dataset/liminhao/0_0_4.jpg,139x114,.jpg,Singular,Simulado,Recortado,.
+Tela,0_0_5.jpg,Base/AFDB_masked_face_dataset/liminhao/0_0_5.jpg,132x104,.jpg,Singular,NO_Simulado,Recortado,.
+Otros,1_0_1.jpg,Base/AFDB_masked_face_dataset/liminhao/1_0_1.jpg,507x429,.jpg,Singular,NO_Simulado,Recortado,Cuero
+Tela,1_0_7.jpg,Base/AFDB_masked_face_dataset/liminhao/1_0_7.jpg,397x288,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,1_0_20160215005358_5MLQK.jpeg,Base/AFDB_masked_face_dataset/linjing/1_0_20160215005358_5MLQK.jpeg,131x126,.jpeg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/linjunjie/0_0_0.jpg,144x135,.jpg,Singular,NO_Simulado,Recortado,.
+Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/linjunjie/0_0_1.jpg,156x123,.jpg,Singular,Simulado,Recortado,.
