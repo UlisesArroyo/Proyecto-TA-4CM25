@@ -1,1 +1,0 @@
-Categoria,Nombre,Ubicacion,Dimensiones,Tipo de archivo,Numero de Personas,Comentarios

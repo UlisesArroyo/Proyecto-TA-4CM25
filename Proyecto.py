@@ -503,8 +503,8 @@ def comparador(imagen):
 		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
 		ubicacion = lineas[linea + 1][izq:der]
 		#print("ENTRO")
-		#print("Ubicacion: ",ubicacion)
-		#print("Imagen: ",imagen)
+		print("Ubicacion: ",ubicacion)
+		print("Imagen: ",imagen)
 		if imagen == ubicacion:
 			#print("GANE >:]")
 			izq, der = buscarRangosDatos(0,lineas[linea + 1])
@@ -731,13 +731,20 @@ def boton_c(event):
 def boton_v(event):
 	recortado(True)	
 
+def boton_right(event):
+	Next()	
+
+def boton_left(event):
+	Last()	
+
+"""
 def boton(event):
 	bp= event.keysym
 	if bp =="Right":
 		Next()
 	elif bp == "Left":
 		Last()
-
+"""
 
 raiz.bind("<Control-q>", boton_q)
 raiz.bind("<Control-Q>", boton_q)
@@ -769,9 +776,15 @@ raiz.bind("<Control-C>", boton_c)
 raiz.bind("<Control-v>", boton_v)
 raiz.bind("<Control-V>", boton_v)
 
+raiz.bind("<Control-Left>", boton_left)
+raiz.bind("<Control-Left>", boton_left)
+
+raiz.bind("<Control-Right>", boton_right)
+raiz.bind("<Control-Right>", boton_right)
 
 
-raiz.bind("<Key>", boton)
+
+#raiz.bind("<Key>", boton)
 	
 	#print("TECLA: ",num)
 """

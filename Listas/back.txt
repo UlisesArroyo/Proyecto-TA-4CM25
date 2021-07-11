@@ -1,5 +1,0 @@
-Categoria,Nombre,Ubicacion,Dimensiones,Tipo de archivo,Numero de Personas,Comentarios
-Clinico,abr.png,back/abr.png,61x150,.png,False,tacubaya 
-Tela,car.png,back/car.png,60x150,.png,True,.
-Convencional,clinico.png,back/clinico.png,62x150,.png,True,.
-Otros,tela.png,back/tela.png,60x150,.png,True,.
