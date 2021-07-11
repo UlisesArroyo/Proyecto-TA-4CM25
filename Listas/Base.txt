@@ -120,7 +120,7 @@ Tela,0_0_6.jpg,Base/AFDB_masked_face_dataset/duhaitao/0_0_6.jpg,191x131,.jpg,Sin
 Convencional,0_1_26.jpg,Base/AFDB_masked_face_dataset/duhaitao/0_1_26.jpg,171x108,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_1_48.jpg,Base/AFDB_masked_face_dataset/duhaitao/0_1_48.jpg,181x124,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_1_50.jpg,Base/AFDB_masked_face_dataset/duhaitao/0_1_50.jpg,150x120,.jpg,Singular,NO_Simulado,Recortado,.
-Convencional,1_0_25.jpg,Base/AFDB_masked_face_dataset/duhaitao/1_0_25.jpg,130x109,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
+Otros,1_0_25.jpg,Base/AFDB_masked_face_dataset/duhaitao/1_0_25.jpg,130x109,.jpg,Singular,NO_Simulado,Recortado,Mal puesto
 Convencional,0_0_2.jpg,Base/AFDB_masked_face_dataset/fanbingbing/0_0_2.jpg,356x229,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_3.jpg,Base/AFDB_masked_face_dataset/fanbingbing/0_0_3.jpg,266x166,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_4.jpg,Base/AFDB_masked_face_dataset/fanbingbing/0_0_4.jpg,297x219,.jpg,Singular,NO_Simulado,Recortado,.
