@@ -143,7 +143,7 @@ Convencional,1_0_3.jpg,Base/AFDB_masked_face_dataset/gaoyixiang/1_0_3.jpg,216x14
 Convencional,1_0_4.jpg,Base/AFDB_masked_face_dataset/gaoyixiang/1_0_4.jpg,200x141,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/gaoyuanyuan/0_0_0.jpg,105x103,.jpg,Singular,NO_Simulado,Recortado,.
 Tela,0_0_7.jpg,Base/AFDB_masked_face_dataset/gaoyuanyuan/0_0_7.jpg,140x102,.jpg,Singular,NO_Simulado,Recortado,.
-Otros,1_0_17.jpg,Base/AFDB_masked_face_dataset/gaoyuanyuan/1_0_17.jpg,131x100,.jpg,Singular,NO_Simulado,Recortado,Se cubre con ropa
+Otros,1_0_17.jpg,Base/AFDB_masked_face_dataset/gaoyuanyuan/1_0_17.jpg,131x100,.jpg,Singular,NO_Simulado,Recortado,No es cubrebocas
 Tela,0_0_0.jpg,Base/AFDB_masked_face_dataset/guanxiaotong/0_0_0.jpg,134x125,.jpg,Singular,NO_Simulado,Recortado,.
 Tela,0_0_12.jpg,Base/AFDB_masked_face_dataset/guanxiaotong/0_0_12.jpg,249x189,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_18.jpg,Base/AFDB_masked_face_dataset/guanxiaotong/0_0_18.jpg,137x102,.jpg,Singular,NO_Simulado,Recortado,.
@@ -170,7 +170,7 @@ Convencional,0_0_5.jpg,Base/AFDB_masked_face_dataset/guojingfei/0_0_5.jpg,154x10
 Tela,0_1_6.jpg,Base/AFDB_masked_face_dataset/guojingfei/0_1_6.jpg,172x128,.jpg,Singular,NO_Simulado,Recortado,.
 Tela,0_0_4.jpg,Base/AFDB_masked_face_dataset/guojingjing/0_0_4.jpg,270x136,.jpg,Singular,NO_Simulado,Recortado,.
 Tela,1_0_3.jpg,Base/AFDB_masked_face_dataset/guojingjing/1_0_3.jpg,268x189,.jpg,Singular,NO_Simulado,Recortado,.
-Otros,1_0_1.jpg,Base/AFDB_masked_face_dataset/guojunchen/1_0_1.jpg,311x256,.jpg,Singular,NO_Simulado,Recortado,Se cubre con ropa
+Otros,1_0_1.jpg,Base/AFDB_masked_face_dataset/guojunchen/1_0_1.jpg,311x256,.jpg,Singular,NO_Simulado,Recortado,No es cubrebocas
 Convencional,0_0_4e2f9179ly3gbdq9xefr3j20zk0zke74.jpg,Base/AFDB_masked_face_dataset/guoxiaofeng/0_0_4e2f9179ly3gbdq9xefr3j20zk0zke74.jpg,430x301,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_6.jpg,Base/AFDB_masked_face_dataset/haiqing/0_0_6.jpg,164x113,.jpg,Singular,NO_Simulado,Recortado,.
 Tela,0_0_+·Îó 2020-02-24 222124.png,Base/AFDB_masked_face_dataset/handongjun/0_0_+·Îó 2020-02-24 222124.png,266x168,.png,Singular,NO_Simulado,Recortado,.
@@ -347,3 +347,4 @@ Tela,1_0_7.jpg,Base/AFDB_masked_face_dataset/liminhao/1_0_7.jpg,397x288,.jpg,Sin
 Convencional,1_0_20160215005358_5MLQK.jpeg,Base/AFDB_masked_face_dataset/linjing/1_0_20160215005358_5MLQK.jpeg,131x126,.jpeg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_0.jpg,Base/AFDB_masked_face_dataset/linjunjie/0_0_0.jpg,144x135,.jpg,Singular,NO_Simulado,Recortado,.
 Convencional,0_0_1.jpg,Base/AFDB_masked_face_dataset/linjunjie/0_0_1.jpg,156x123,.jpg,Singular,Simulado,Recortado,.
+Clinico_valvula,0_0_12.jpg,Base/AFDB_masked_face_dataset/linshuhao/0_0_12.jpg,445x267,.jpg,Singular,NO_Simulado,Recortado,.
