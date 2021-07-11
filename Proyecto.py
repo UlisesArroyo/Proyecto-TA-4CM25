@@ -18,6 +18,9 @@ lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
 datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Simulacion", "Recortado", "Comentarios"]
 
+#estandarRecortado = "NO_Recortado" 
+estandarRecortado = "Recortado"
+
 class Imagen:
 	def __init__(self, categoria, nombre, ubicacion, dimensiones, tipoArchivo, numeroPersonas, simulado, recortado, comentarios):
 		self.categoria = categoria
@@ -56,7 +59,7 @@ class Imagen:
 		print("-------------------------------")
 
 
-objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "Recortado", ".")
+objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", estandarRecortado , ".")
 
 anchoImagenSeleccion = 320;
 altoImagenSeleccion = 240;
@@ -186,7 +189,7 @@ def modificacionrutas(imagenes, nombreCarpeta):
 
 def confirmarListas(carpetaRaiz):
 	global lineas
-	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Simulacion" + "," + "Recortado"+  "," + "Comentarios" +"\n"
+	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Simulacion" + "," + "Recortado" +  "," + "Comentarios" +"\n"
 	try:
 		os.stat("./Listas")
 	except OSError as e:
@@ -300,7 +303,7 @@ def Next():
 			Imagen3.image = img	
 
 	
-		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "NO_Recortado", ".")
+		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", estandarRecortado, ".")
 		refrescarInformacionLocal()		
 		pluralSingular(False)
 		simulado(False)
@@ -339,7 +342,7 @@ def Last():
 			Imagen3.configure(image=img)
 			Imagen3.image = img	
 
-		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", "Recortado", ".")
+		objImagen = Imagen("Sin asignar", "Nombre", "Ubicacion", "Dimension", "TipoArchivo", "Singular", "NO_Simulado", estandarRecortado, ".")
 		refrescarInformacionLocal()
 		pluralSingular(False)
 		simulado(False)
