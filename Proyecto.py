@@ -13,7 +13,7 @@ posicionImagen=0
 carpetaAbierta=False
 rutasImagenes =[]
 listaGenerada = []
-categorias = ["Clinico", "Clinico_(valvula)", "Tela", "Convencional", "Sin_cubrebocas", "Otros"]
+categorias = ["Clinico", "Clinico_valvula", "Tela", "Convencional", "Sin_cubrebocas", "Otros"]
 lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
 datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Simulacion", "Recortado", "Comentarios"]
