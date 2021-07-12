@@ -5053,7 +5053,7 @@ Convencional,1582379757.jpg,Base/RMFD/single2-0/1582379757.jpg,280x390,.jpg,Sing
 Convencional,1582379758.jpg,Base/RMFD/single2-0/1582379758.jpg,280x392,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,1582379759.jpg,Base/RMFD/single2-0/1582379759.jpg,280x383,.jpg,Plural,NO_Simulado,NO_Recortado,.
 Convencional,1582379760.jpg,Base/RMFD/single2-0/1582379760.jpg,280x173,.jpg,Singular,NO_Simulado,NO_Recortado,.
-Convencional,1582379761.jpg,Base/RMFD/single2-0/1582379761.jpg,280x173,.jpg,Singular,NO_Simulado,NO_Recortado,Mal puesto
+Otros,1582379761.jpg,Base/RMFD/single2-0/1582379761.jpg,280x173,.jpg,Singular,NO_Simulado,NO_Recortado,Mal puesto
 Convencional,1582379765.jpg,Base/RMFD/single2-0/1582379765.jpg,280x389,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,1582379768.jpg,Base/RMFD/single2-0/1582379768.jpg,280x392,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,1582379782.jpg,Base/RMFD/single2-0/1582379782.jpg,280x390,.jpg,Singular,NO_Simulado,NO_Recortado,.
