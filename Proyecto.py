@@ -109,7 +109,7 @@ def abrir_carpeta():
 		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
 		lines = fichero.readlines()
 		fichero.close()
-		posicionImagen = len(lines) - 1
+		#posicionImagen = len(lines) - 1
 
 		
 
