@@ -1454,7 +1454,7 @@ Tela,0214.jpg,Base/RMFD/RWMFD_part_1/0001/0214.jpg,256x256,.jpg,Singular,Simulad
 Convencional,0215.jpg,Base/RMFD/RWMFD_part_1/0001/0215.jpg,256x187,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Tela,0216.jpg,Base/RMFD/RWMFD_part_1/0001/0216.jpg,256x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Tela,0217.jpg,Base/RMFD/RWMFD_part_1/0001/0217.jpg,256x256,.jpg,Singular,Simulado,NO_Recortado,.
-Sin_cubrebocas,0218.jpg,Base/RMFD/RWMFD_part_1/0001/0218.jpg,256x256,.jpg,Singular,Simulado,NO_Recortado,.
+Convencional,0218.jpg,Base/RMFD/RWMFD_part_1/0001/0218.jpg,256x256,.jpg,Plural,Simulado,NO_Recortado,.
 Convencional,0219.jpg,Base/RMFD/RWMFD_part_1/0001/0219.jpg,256x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,0220.jpg,Base/RMFD/RWMFD_part_1/0001/0220.jpg,256x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Tela,0221.jpg,Base/RMFD/RWMFD_part_1/0001/0221.jpg,256x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
@@ -1968,7 +1968,7 @@ Convencional,0079.jpg,Base/RMFD/RWMFD_part_1/0008/0079.jpg,256x181,.jpg,Plural,N
 Convencional,0080.jpg,Base/RMFD/RWMFD_part_1/0008/0080.jpg,256x168,.jpg,Plural,NO_Simulado,NO_Recortado,.
 Convencional,0081.jpg,Base/RMFD/RWMFD_part_1/0008/0081.jpg,225x256,.jpg,Plural,NO_Simulado,NO_Recortado,.
 Convencional,0082.jpg,Base/RMFD/RWMFD_part_1/0008/0082.jpg,170x256,.jpg,Plural,NO_Simulado,NO_Recortado,.
-Sin_cubrebocas,0083.jpg,Base/RMFD/RWMFD_part_1/0008/0083.jpg,256x243,.jpg,Singular,Simulado,NO_Recortado,.
+Tela,0083.jpg,Base/RMFD/RWMFD_part_1/0008/0083.jpg,256x243,.jpg,Singular,Simulado,NO_Recortado,.
 Clinico_valvula,0084.jpg,Base/RMFD/RWMFD_part_1/0008/0084.jpg,182x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,0085.jpg,Base/RMFD/RWMFD_part_1/0008/0085.jpg,163x256,.jpg,Singular,NO_Simulado,NO_Recortado,.
 Convencional,0086.jpg,Base/RMFD/RWMFD_part_1/0008/0086.jpg,193x256,.jpg,Plural,NO_Simulado,NO_Recortado,.
