@@ -18,7 +18,7 @@ lineas = []
 # Datos de la lista: Tienen que separarse con una " , "
 datosLista = ["Nombre", "UbicacionArchivo", "Categorias", "Dimensiones", "Tipo de archivo", "Numero de personas[Plural Singular]", "Simulacion", "Recortado", "Comentarios"]
 
-estandarRecortado = "NO_Recortado" 
+estandarRecortado = "NO_Recortado"
 #estandarRecortado = "Recortado"
 
 class Imagen:
@@ -106,7 +106,7 @@ def abrir_carpeta():
 		rutasImagenes = modificacionrutas(rutasImagenes, rutaRelativa[1])	
 		confirmarListas(rutaRelativa[1])
 
-		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt", "r")
 		lines = fichero.readlines()
 		fichero.close()
 		#posicionImagen = len(lines) - 1
@@ -189,7 +189,7 @@ def modificacionrutas(imagenes, nombreCarpeta):
 
 def confirmarListas(carpetaRaiz):
 	global lineas
-	indice = "Categoria" + "," + "Nombre" + "," + "Ubicacion" + "," + "Dimensiones" + "," + "Tipo de archivo" + "," + "Numero de Personas" + "," + "Simulacion" + "," + "Recortado" +  "," + "Comentarios" +"\n"
+	indice = "Categoria" + "|" + "Nombre" + "|" + "Ubicacion" + "|" + "Dimensiones" + "|" + "Tipo de archivo" + "|" + "Numero de Personas" + "|" + "Simulacion" + "|" + "Recortado" +  "|" + "Comentarios" +"\n"
 	try:
 		os.stat("./Listas")
 	except OSError as e:
@@ -252,19 +252,19 @@ def confirmarListas(carpetaRaiz):
 def escribirLista():
 	imagenNueva, posicionImagenLista, categoria, numeroPersonas,simulado, recortado, comentario= comparador(rutasImagenes[posicionImagen])
 	nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])	
-	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+	fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"r")
 	lines = fichero.readlines()
 	fichero.close()
 	if posicionImagenLista == 0:
-		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
-		fichero.write(categoria + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension + "," + numeroPersonas + "," + simulado + "," + recortado  + "," + comentario + "\n")#Funcion ingreso de datos
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"a")
+		fichero.write(categoria + "|" + nombre + "|" + ubicacion + "|" + dimensiones + "|" + extension + "|" + numeroPersonas + "|" + simulado + "|" + recortado  + "|" + comentario + "\n")#Funcion ingreso de datos
 	else: 
-		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","w")
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"w")
 		for line in range(len(lines)):
 			if line != posicionImagenLista:
 				fichero.write(lines[line])
 			else:
-				fichero.write(categoria + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension + "," + numeroPersonas + "," + simulado + "," + recortado  + "," + comentario + "\n")
+				fichero.write(categoria + "|" + nombre + "|" + ubicacion + "|" + dimensiones + "|" + extension + "|" + numeroPersonas + "|" + simulado + "|" + recortado  + "|" + comentario + "\n")
 
 
 	fichero.close()
@@ -272,7 +272,7 @@ def escribirLista():
 def Next():
 	global posicionImagen, rutaRelativa, objImagen
 	if carpetaAbierta and posicionImagen < (len(rutasImagenes) -1) and objImagen.categoria != "Sin asignar":
-		escribirLista()
+		#escribirLista()
 		posicionImagen += 1
 		posicionImagen %= len(rutasImagenes)
 		rutaImagenCompleta = rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]
@@ -312,7 +312,7 @@ def Next():
 def Last():
 	global posicionImagen, rutaRelativa, objImagen
 	if (carpetaAbierta and posicionImagen > 0 and objImagen.categoria != "Sin asignar") :
-		escribirLista()
+		#escribirLista()
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutasImagenes)
@@ -443,10 +443,10 @@ def Seleccionar(categoriaSeleccionada):
 			objImagen.categoria = categorias[categoriaSeleccionada]
 			refrescarInformacionLocal()
 			
-			fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
+			fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"a")
 			print("./Listas/" + rutaRelativa[1] + ".txt")
 			nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])
-			fichero.write(categorias[categoriaSeleccionada] + "," + nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
+			fichero.write(categorias[categoriaSeleccionada] + "|" + nombre + "|" + ubicacion + "|" + dimensiones + "|" + extension +"\n")#Funcion ingreso de datos
 			fichero.close()
 
 		else: 
@@ -458,23 +458,23 @@ def Seleccionar(categoriaSeleccionada):
 					objImagen.categoria = categorias[categoriaSeleccionada]
 					refrescarInformacionLocal()
 
-					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"r")
 					lines = fichero.readlines()
 					fichero.close()
-					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","w")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"w")
 					line=0
 					for line in range (len(lines)):
 						if(line != ubicacionImagenRepetida):
-							izq = lines[line].find(",") + 1
-							der = lines[line][izq:].find(",") + izq
+							izq = lines[line].find("|") + 1
+							der = lines[line][izq:].find("|") + izq
 							ubicacion = lines[line][izq:der]
 							print("PRUEBA DE FUEGO->",ubicacion)
 							nombre, ubicacion, dimensiones, extension = recopilacionInformacion(ubicacion)
 							fichero.write(lines[line])
 					fichero.close()				
-					fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
+					fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"a")
 					nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutasImagenes[posicionImagen])
-					fichero.write(nombre + "," + ubicacion + "," + dimensiones + "," + extension +"\n")#Funcion ingreso de datos
+					fichero.write(nombre + "|" + ubicacion + "|" + dimensiones + "|" + extension +"\n")#Funcion ingreso de datos
 					fichero.close()	
 					"""
 
@@ -502,12 +502,14 @@ def comparador(imagen):
 	lineas = fichero.readlines()
 	#print("XXX",lineas)
 	fichero.close()
-	for linea in range(posicionImagen,len(lineas) - 1):
+	#print ("lineas:",len(lineas) -1)
+	for linea in range(len(lineas) - 1):
+
 		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
 		ubicacion = lineas[linea + 1][izq:der]
 		#print("ENTRO")
-		print("Ubicacion: ",ubicacion)
-		print("Imagen: ",imagen)
+		print("Ubicacion: ",ubicacion, " linea: ", linea)
+		print("Imagen: ",imagen," posicionImagen: ",posicionImagen)
 		if imagen == ubicacion:
 			#print("GANE >:]")
 			izq, der = buscarRangosDatos(0,lineas[linea + 1])
@@ -533,7 +535,7 @@ def comparador(imagen):
 """
 	x = 0
 	for categoria in categorias:	
-		fichero = open("./Listas/" + categoria + ".txt","r")
+		fichero = open("./Listas/" + categoria + ".txt"|"r")
 		lineas[x] = [fichero.readlines()]
 		print("XXX",lineas[x])
 		fichero.close()
@@ -545,8 +547,8 @@ def comparador(imagen):
 		for linea in range(len(lineas[categoria][0]) - 1):
 			mensaje = imagen
 			mensaje = mensaje[0 : len(mensaje)]
-			izq = lineas[categoria][0][linea + 1].find(",") + 1
-			der = lineas[categoria][0][linea + 1][izq:].find(",") + izq
+			izq = lineas[categoria][0][linea + 1].find("|") + 1
+			der = lineas[categoria][0][linea + 1][izq:].find("|") + izq
 			ubicacion = lineas[categoria][0][linea + 1][izq:der]
 			print("ENTRO")
 			print(ubicacion)
@@ -560,7 +562,7 @@ def comparador(imagen):
 def buscarRangosDatos(dato, linea):
 	listaIndices = [0]
 	for i in range(len(linea)):
-		if linea[i] == ",":
+		if linea[i] == "|":
 			listaIndices.append(i)
 	listaIndices.append(len(linea))
 	if dato * 2 == 0:
@@ -573,8 +575,8 @@ def buscarRangosDatos(dato, linea):
 	else: 
 		der = listaIndices[(dato) + 1]
 
-	#print("listaIndices: ", listaIndices)
-	#print(f"izq: {izq}|| der: {der}|| dato: {dato}")
+	print("listaIndices: ", listaIndices)
+	print(f"izq: {izq}|| der: {der}|| dato: {dato}")
 	return izq, der
 
 
