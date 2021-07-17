@@ -502,7 +502,7 @@ def comparador(imagen):
 	lineas = fichero.readlines()
 	#print("XXX",lineas)
 	fichero.close()
-	for linea in range(len(lineas) - 1):
+	for linea in range(posicionImagen,len(lineas) - 1):
 		izq, der = buscarRangosDatos(2,lineas[linea + 1])#Es un 2 porque buscamos la ubicación
 		ubicacion = lineas[linea + 1][izq:der]
 		#print("ENTRO")
