@@ -3623,11 +3623,11 @@ Convencional|007.jpg|Base/RMFD/RWMFD_part_2_pro/00277/007.jpg|256x256|.jpg|Plura
 Convencional|008.jpg|Base/RMFD/RWMFD_part_2_pro/00277/008.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|009.jpg|Base/RMFD/RWMFD_part_2_pro/00277/009.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Tela|010.jpg|Base/RMFD/RWMFD_part_2_pro/00277/010.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
-Tela|011.jpg|Base/RMFD/RWMFD_part_2_pro/00277/011.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Convencional|011.jpg|Base/RMFD/RWMFD_part_2_pro/00277/011.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|012.jpg|Base/RMFD/RWMFD_part_2_pro/00277/012.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|013.jpg|Base/RMFD/RWMFD_part_2_pro/00277/013.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|014.jpg|Base/RMFD/RWMFD_part_2_pro/00277/014.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
-Tela|015.jpg|Base/RMFD/RWMFD_part_2_pro/00277/015.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Convencional|015.jpg|Base/RMFD/RWMFD_part_2_pro/00277/015.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Otros|000.jpg|Base/RMFD/RWMFD_part_2_pro/00278/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|Mal puesto
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00279/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00279/001.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
@@ -3636,7 +3636,7 @@ Convencional|003.jpg|Base/RMFD/RWMFD_part_2_pro/00279/003.jpg|256x256|.jpg|Singu
 Tela|004.jpg|Base/RMFD/RWMFD_part_2_pro/00279/004.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00280/000.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
 Tela|000.jpg|Base/RMFD/RWMFD_part_2_pro/00281/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
-Tela|001.jpg|Base/RMFD/RWMFD_part_2_pro/00281/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Otros|001.jpg|Base/RMFD/RWMFD_part_2_pro/00281/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|No es cubrebocas
 Convencional|002.jpg|Base/RMFD/RWMFD_part_2_pro/00281/002.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
 Tela|000.jpg|Base/RMFD/RWMFD_part_2_pro/00282/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Otros|001.jpg|Base/RMFD/RWMFD_part_2_pro/00282/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|Mal puesto
@@ -3646,13 +3646,13 @@ Convencional|004.jpg|Base/RMFD/RWMFD_part_2_pro/00282/004.jpg|256x256|.jpg|Plura
 Convencional|005.jpg|Base/RMFD/RWMFD_part_2_pro/00282/005.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|006.jpg|Base/RMFD/RWMFD_part_2_pro/00282/006.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Clinico|007.jpg|Base/RMFD/RWMFD_part_2_pro/00282/007.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
-Tela|000.jpg|Base/RMFD/RWMFD_part_2_pro/00283/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00283/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00284/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00285/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00285/001.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|002.jpg|Base/RMFD/RWMFD_part_2_pro/00285/002.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00286/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
-Tela|001.jpg|Base/RMFD/RWMFD_part_2_pro/00286/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00286/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Tela|002.jpg|Base/RMFD/RWMFD_part_2_pro/00286/002.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Otros|003.jpg|Base/RMFD/RWMFD_part_2_pro/00286/003.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|Mal puesto
 Otros|000.jpg|Base/RMFD/RWMFD_part_2_pro/00287/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|No es cubrebocas
@@ -3673,20 +3673,20 @@ Tela|003.jpg|Base/RMFD/RWMFD_part_2_pro/00292/003.jpg|256x256|.jpg|Singular|NO_S
 Tela|004.jpg|Base/RMFD/RWMFD_part_2_pro/00292/004.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
 Tela|005.jpg|Base/RMFD/RWMFD_part_2_pro/00292/005.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
 Tela|006.jpg|Base/RMFD/RWMFD_part_2_pro/00292/006.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
-Tela|007.jpg|Base/RMFD/RWMFD_part_2_pro/00292/007.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
-Tela|008.jpg|Base/RMFD/RWMFD_part_2_pro/00292/008.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|009.jpg|Base/RMFD/RWMFD_part_2_pro/00292/009.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|010.jpg|Base/RMFD/RWMFD_part_2_pro/00292/010.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|011.jpg|Base/RMFD/RWMFD_part_2_pro/00292/011.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|012.jpg|Base/RMFD/RWMFD_part_2_pro/00292/012.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|013.jpg|Base/RMFD/RWMFD_part_2_pro/00292/013.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|014.jpg|Base/RMFD/RWMFD_part_2_pro/00292/014.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
-Tela|015.jpg|Base/RMFD/RWMFD_part_2_pro/00292/015.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
+Tela|007.jpg|Base/RMFD/RWMFD_part_2_pro/00292/007.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Tela|008.jpg|Base/RMFD/RWMFD_part_2_pro/00292/008.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|009.jpg|Base/RMFD/RWMFD_part_2_pro/00292/009.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|010.jpg|Base/RMFD/RWMFD_part_2_pro/00292/010.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|011.jpg|Base/RMFD/RWMFD_part_2_pro/00292/011.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|012.jpg|Base/RMFD/RWMFD_part_2_pro/00292/012.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|013.jpg|Base/RMFD/RWMFD_part_2_pro/00292/013.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|014.jpg|Base/RMFD/RWMFD_part_2_pro/00292/014.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Tela|015.jpg|Base/RMFD/RWMFD_part_2_pro/00292/015.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Tela|016.jpg|Base/RMFD/RWMFD_part_2_pro/00292/016.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
-Tela|017.jpg|Base/RMFD/RWMFD_part_2_pro/00292/017.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|018.jpg|Base/RMFD/RWMFD_part_2_pro/00292/018.jpg|256x256|.jpg|Singular|Simulado|NO_Recortado|.
-Tela|019.jpg|Base/RMFD/RWMFD_part_2_pro/00292/019.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
-Tela|020.jpg|Base/RMFD/RWMFD_part_2_pro/00292/020.jpg|256x256|.jpg|Plural|Simulado|NO_Recortado|.
+Tela|017.jpg|Base/RMFD/RWMFD_part_2_pro/00292/017.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|018.jpg|Base/RMFD/RWMFD_part_2_pro/00292/018.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Tela|019.jpg|Base/RMFD/RWMFD_part_2_pro/00292/019.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
+Tela|020.jpg|Base/RMFD/RWMFD_part_2_pro/00292/020.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00293/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00293/001.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|002.jpg|Base/RMFD/RWMFD_part_2_pro/00293/002.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
@@ -3718,10 +3718,10 @@ Tela|000.jpg|Base/RMFD/RWMFD_part_2_pro/00300/000.jpg|256x256|.jpg|Plural|Simula
 Tela|001.jpg|Base/RMFD/RWMFD_part_2_pro/00300/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00301/000.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Tela|001.jpg|Base/RMFD/RWMFD_part_2_pro/00301/001.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
-Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00302/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
+Tela|000.jpg|Base/RMFD/RWMFD_part_2_pro/00302/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00302/001.jpg|256x256|.jpg|Plural|NO_Simulado|NO_Recortado|.
 Convencional|002.jpg|Base/RMFD/RWMFD_part_2_pro/00302/002.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
-Convencional|003.jpg|Base/RMFD/RWMFD_part_2_pro/00302/003.jpg|256x256|.jpg|Singular|NO_Simulado|Recortado|.
+Convencional|003.jpg|Base/RMFD/RWMFD_part_2_pro/00302/003.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|000.jpg|Base/RMFD/RWMFD_part_2_pro/00303/000.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|001.jpg|Base/RMFD/RWMFD_part_2_pro/00303/001.jpg|256x256|.jpg|Singular|NO_Simulado|NO_Recortado|.
 Convencional|002.jpg|Base/RMFD/RWMFD_part_2_pro/00303/002.jpg|256x256|.jpg|Singular|NO_Simulado|Recortado|.
