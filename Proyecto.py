@@ -96,7 +96,7 @@ lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
 
 def abrir_carpeta():
 	global rutasImagenes,carpetaAbierta, posicionImagen, rutaRelativa
-	posicionImagen = 3472
+	posicionImagen = 3735
 	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file") 
 
 	if(len(archivo_abierto) != 0):
