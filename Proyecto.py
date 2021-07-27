@@ -272,7 +272,7 @@ def escribirLista():
 def Next():
 	global posicionImagen, rutaRelativa, objImagen
 	if carpetaAbierta and posicionImagen < (len(rutasImagenes) -1) and objImagen.categoria != "Sin asignar":
-		#escribirLista()
+		escribirLista()
 		posicionImagen += 1
 		posicionImagen %= len(rutasImagenes)
 		rutaImagenCompleta = rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]
@@ -312,7 +312,6 @@ def Next():
 def Last():
 	global posicionImagen, rutaRelativa, objImagen
 	if (carpetaAbierta and posicionImagen > 0 and objImagen.categoria != "Sin asignar") :
-		#escribirLista()
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutasImagenes)
