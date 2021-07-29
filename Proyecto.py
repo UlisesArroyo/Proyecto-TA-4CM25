@@ -96,7 +96,7 @@ lblFondo = Label(miframe,image=imgFondo).place(x=0,y=0)
 
 def abrir_carpeta():
 	global rutasImagenes,carpetaAbierta, posicionImagen, rutaRelativa
-	posicionImagen = 3735
+	posicionImagen = 0
 	archivo_abierto = filedialog.askdirectory(initialdir="./", title="Select file") 
 
 	if(len(archivo_abierto) != 0):
@@ -252,14 +252,15 @@ def confirmarListas(carpetaRaiz):
 def escribirLista():
 	imagenNueva, posicionImagenLista, categoria, numeroPersonas,simulado, recortado, comentario= comparador(rutasImagenes[posicionImagen])
 	nombre, ubicacion, dimensiones, extension = recopilacionInformacion(rutaRelativa[0] + "/" + rutasImagenes[posicionImagen])	
-	fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"r")
+	fichero = open("./Listas/" + rutaRelativa[1] + ".txt","r")
+	#print("./Listas/" + rutaRelativa[1] + ".txt")
 	lines = fichero.readlines()
 	fichero.close()
 	if posicionImagenLista == 0:
-		fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"a")
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","a")
 		fichero.write(categoria + "|" + nombre + "|" + ubicacion + "|" + dimensiones + "|" + extension + "|" + numeroPersonas + "|" + simulado + "|" + recortado  + "|" + comentario + "\n")#Funcion ingreso de datos
 	else: 
-		fichero = open("./Listas/" + rutaRelativa[1] + ".txt"|"w")
+		fichero = open("./Listas/" + rutaRelativa[1] + ".txt","w")
 		for line in range(len(lines)):
 			if line != posicionImagenLista:
 				fichero.write(lines[line])
@@ -272,7 +273,7 @@ def escribirLista():
 def Next():
 	global posicionImagen, rutaRelativa, objImagen
 	if carpetaAbierta and posicionImagen < (len(rutasImagenes) -1) and objImagen.categoria != "Sin asignar":
-		#escribirLista()
+		escribirLista()
 		posicionImagen += 1
 		posicionImagen %= len(rutasImagenes)
 		rutaImagenCompleta = rutaRelativa[0] + "/" + rutasImagenes[posicionImagen-1]
@@ -312,7 +313,7 @@ def Next():
 def Last():
 	global posicionImagen, rutaRelativa, objImagen
 	if (carpetaAbierta and posicionImagen > 0 and objImagen.categoria != "Sin asignar") :
-		#escribirLista()
+		escribirLista()
 		posicionImagen -= 1
 		if(posicionImagen<0):
 			posicionImagen += len(rutasImagenes)
